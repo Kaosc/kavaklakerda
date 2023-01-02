@@ -1,6 +1,7 @@
 /*************** GENERAL SETTINGS ***************/
 html,body
 {
+
     margin: 0px;
     width: 100%;
     overflow-x: hidden; 
@@ -28,7 +29,12 @@ strong {
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background:linear-gradient(0deg, rgba(87, 87, 87, 0.808), rgba(75, 75, 75, 0.11)), url(../Images/lightHouse.jpg);
+    background-repeat: no-repeat;
+    background-size: 2098px;
+
+    background-repeat: no-repeat;
+    background-position: center;
     overflow-x: hidden;
 }
 
@@ -42,7 +48,7 @@ section {
 }
 
 .text-b-dark {
-    background-color: #616161;
+    background-color: #46464688;
     color: white;
 }
 
@@ -201,6 +207,7 @@ header .location p {
 }
 
 .products .products-content .products-menu {
+    background-color: rgba(255, 255, 255, 0.747);
     height: auto;
     padding: 8px 16px;
 }
@@ -221,6 +228,7 @@ header .location p {
 }
 
 .products .products-content .p-items {
+    background-color: rgba(255, 255, 255, 0.404);
     height: auto;
     box-sizing: inherit;
     display: block;
