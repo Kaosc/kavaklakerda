@@ -5,10 +5,10 @@ import { FaPhone } from "react-icons/fa"
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
-			<section className="w-full min-h-screen items-center justify-center">
+			<section className="w-screen min-h-screen items-center justify-center">
 				{/* VIDEO BACKGROUND */}
 				<video
-					className="w-full h-full object-cover mt-[-7vh] z-[-1]"
+					className="w-full h-screen object-cover mt-[-7vh]"
 					autoPlay
 					loop
 					muted

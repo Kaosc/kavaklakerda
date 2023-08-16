@@ -32,9 +32,9 @@ export default function Navbar() {
 
 	return (
 		<div
-			className="fixed w-full top-0 z-10 transition-all duration-300 bg-[#0000003d] backdrop-blur-sm"
+			className="absolute w-full top-0 z-20 transition-all duration-300 bg-[#0000003d] backdrop-blur-sm"
 			style={{
-				position: reachTop ? "static" : "fixed",
+				position: reachTop ? "relative" : "fixed",
 				transform: scrollDirection === "down" ? "translateY(-100%)" : "translateY(0)",
 			}}
 		>
