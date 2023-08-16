@@ -34,13 +34,11 @@ strong {
 }
 
 body {
-    background: linear-gradient(0deg, rgba(87, 87, 87, 0.808), rgba(75, 75, 75, 0.11)), url(../Images/lightHouse.jpg);
-    background-repeat: no-repeat;
+    background: linear-gradient(0deg, rgba(87, 87, 87, 0.808), rgba(75, 75, 75, 0.11)), url(./assets/lightHouse.jpg);
     background-size: 2098px;
-
     background-repeat: no-repeat;
     background-position: center;
-    overflow-x: hidden;
+    background-size: auto;
 }
 
 section {
@@ -106,7 +104,7 @@ header {
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.137), rgba(0, 0, 0, 0.73)), url(../Images/bannerImage.png);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.137), rgba(0, 0, 0, 0.73)), url(./assets/bannerImage.png);
     height: 750px;
     min-height: 60%;
     min-width: 100%;
@@ -414,7 +412,7 @@ header .location p {
 @media only screen and (max-width: 693px) {
 
     header {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.137), rgba(0, 0, 0, 0.73)), url(../Images/bannerImageSm.png);
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.137), rgba(0, 0, 0, 0.73)), url(./assets/bannerImageSm.png);
         background-position-x: center;
         background-position-Y: top;
         height: 500px;
