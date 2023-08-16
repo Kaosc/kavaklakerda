@@ -8,17 +8,19 @@ export default function Home() {
 			<section className="w-full min-h-screen">
 				{/* VIDEO BACKGROUND */}
 				<video
-					className="absolute w-full h-full object-cover z-[-1] mt-[-7vh] "
+					className="absolute mt-[-7vh] z-[-1] w-full min-h-screen object-cover"
+					width={1920}
+					height={1080}
 					autoPlay
 					loop
 					muted
+					playsInline
 				>
 					<source
 						src="https://i.imgur.com/Tu0UM4O.mp4"
 						type="video/mp4"
 					/>
 				</video>
-
 				<div className="flex flex-col justify-center items-center">
 					{/* TITLE */}
 					<h1 className="max-sm:text-4xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
