@@ -1,12 +1,11 @@
 import Navbar from "@/components/navbar/Navbar"
 import "./globals.css"
-import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 import NavbarMargin from "@/components/navbar/NavbarMargin"
 
-export const metadata: Metadata = {
+export const metadata = {
 	title: "Kavaklakerda",
 	description: "A fish delicatessen in Istanbul, Turkey",
 }
@@ -32,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			/>
 			<meta
 				name="description"
-				content="A fish delicatessen in Istanbul, Turkey"
+				content={metadata.description}
 			/>
 			<meta
 				name="keywords"
