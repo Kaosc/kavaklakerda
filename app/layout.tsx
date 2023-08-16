@@ -8,7 +8,7 @@ import NavbarMargin from "@/components/navbar/NavbarMargin"
 
 export const metadata: Metadata = {
 	title: "Kavaklakerda",
-	description: "A fish restaurant in Istanbul, Turkey",
+	description: "A fish delicatessen in Istanbul, Turkey",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en">
 			<link
 				rel="icon"
-				href="assets/favicon.png"
+				href="/assets/favicon.png"
 			/>
 			<meta
 				name="viewport"
@@ -29,6 +29,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<meta
 				name="robots"
 				content="index, follow"
+			/>
+			<meta
+				name="description"
+				content="A fish delicatessen in Istanbul, Turkey"
+			/>
+			<meta
+				name="keywords"
+				content="kavaklakerda, kavaklakerda.com, kavaklakerda istanbul, kavaklakerda turkey, kavaklakerda fish, kavaklakerda fish delicatessen, kavaklakerda fish delicatessen istanbul, kavaklakerda fish delicatessen turkey, kavaklakerda fish delicatessen fish, kavaklakerda fish delicatessen fish istanbul, kavaklakerda fish delicatessen fish turkey, kavaklakerda fish delicatessen fish delicatessen, kavaklakerda fish delicatessen fish delicatessen istanbul, kavaklakerda fish delicatessen fish delicatessen turkey"
+			/>
+			<meta
+				name="theme-color"
+				content="#000000"
 			/>
 			<body className={inter.className}>
 				<NavbarMargin />
