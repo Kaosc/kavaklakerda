@@ -5,10 +5,10 @@ import { FaPhone } from "react-icons/fa"
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
-			<section className="w-full min-h-screen">
+			<section className="w-full min-h-screen items-center justify-center">
 				{/* VIDEO BACKGROUND */}
 				<video
-					className="fixed w-full h-full object-cover mt-[-7vh] z-[-1]"
+					className="w-full h-full object-cover mt-[-7vh] z-[-1]"
 					autoPlay
 					loop
 					muted
@@ -16,7 +16,7 @@ export default function Home() {
 					typeof="video/mp4"
 				></video>
 
-				<div className="flex flex-col justify-center items-center bg-transparent">
+				<div className="absolute top-20 left-0 right-0 flex flex-col justify-center items-center">
 					{/* TITLE */}
 					<h1 className="max-sm:text-4xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
