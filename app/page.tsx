@@ -8,18 +8,15 @@ export default function Home() {
 			<section className="w-full min-h-screen">
 				{/* VIDEO BACKGROUND */}
 				<video
-					className="fixed w-full h-full object-cover z-[-1] mt-[-7vh] "
+					className="fixed w-full h-full object-cover mt-[-7vh] z-[-1]"
 					autoPlay
 					loop
 					muted
-				>
-					<source
-						src="https://i.imgur.com/Tu0UM4O.mp4"
-						type="video/mp4"
-					/>
-				</video>
+					src="https://i.imgur.com/Tu0UM4O.mp4"
+					typeof="video/mp4"
+				></video>
 
-				<div className="flex flex-col justify-center items-center">
+				<div className="flex flex-col justify-center items-center bg-transparent">
 					{/* TITLE */}
 					<h1 className="max-sm:text-4xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
