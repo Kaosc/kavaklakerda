@@ -24,14 +24,14 @@ export default function Gallery() {
 				return (
 					<div
 						key={index}
-						className="h-[500px] my-10 mx-10"
+						className="h-[400px] my-10 mx-10"
 					>
 						<Image
 							key={index}
 							alt="gallery"
 							src={image}
-							width={700}
-							height={600}
+							width={550}
+							height={500}
 							style={{
 								height: "100%",
 								objectFit: "cover",
