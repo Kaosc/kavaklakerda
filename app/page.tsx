@@ -12,8 +12,12 @@ export default function Home() {
 					autoPlay
 					loop
 					muted
-					src="https://i.imgur.com/Tu0UM4O.mp4"
-				></video>
+				>
+					<source
+						src="https://i.imgur.com/Tu0UM4O.mp4"
+						type="video/mp4"
+					/>
+				</video>
 
 				<div className="flex flex-col justify-center items-center">
 					{/* TITLE */}
