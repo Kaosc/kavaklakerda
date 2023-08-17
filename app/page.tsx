@@ -24,7 +24,7 @@ export default function Home() {
 
 					{/* LOGO */}
 					<Image
-						className="mt-10"
+						className="mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200	"
 						src="/assets/logo.png"
 						alt="logo"
 						width={120}
@@ -52,15 +52,13 @@ export default function Home() {
 					<h2 className="text-3xl max-sm:text-2xl text-center">34450 Sarıyer/İstanbul</h2>
 
 					{/* PHONE */}
-					<div className="mt-10 flex">
-						<FaPhone size={30} />
-						<a
-							className="text-3xl max-sm:text-2xl text-center ml-4"
-							href="tel:+9005534945099"
-						>
-							+90 0553 494 50 99
-						</a>
-					</div>
+					<a
+						href="tel:+9005534945099"
+						className="mt-10 flex items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
+					>
+						<FaPhone size={29} />
+						<p className="text-3xl max-sm:text-2xl text-center ml-4">+90 553 494 50 99</p>
+					</a>
 
 					{/* MAP */}
 					<iframe

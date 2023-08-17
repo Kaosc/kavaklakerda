@@ -1,45 +1,55 @@
 "use client"
 
 import Image from "next/image"
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { useState } from "react"
-
-const images = [
-	"https://www.instagram.com/p/CimbWlbLnHd/media?size=l",
-	"https://www.instagram.com/p/Cimdk7mLdD1/media?size=l",
-	"https://www.instagram.com/p/CimbjpsLZKS/media?size=l",
-	// "https://www.instagram.com/p/Cg6-fTJsGxw/media?size=l",
-	// "https://www.instagram.com/p/CGXYCBxAT1i/media?size=l",
-	// "https://www.instagram.com/p/CimeJx_rUOQ/media?size=l",
-	// "https://www.instagram.com/p/CeYQ2VPLLOl/media?size=l",
-	// "https://www.instagram.com/p/Cg68eBLseE1/media?size=l",
-	// "https://www.instagram.com/p/CtTSCyorsRb/media?size=l",
-]
+import { galleryImages } from "@/utils/constants"
+import GalleryPreview from "./GalleryPreview"
 
 export default function Gallery() {
-	const [showSlideshow, setShowSlideshow] = useState(false)
+	const [previewVisible, setPreviewVisible] = useState(false)
+	const startIndex = useRef(0)
+
+	// Hide scrollbar when preview is visible
+	useEffect(() => {
+		document.body.style.overflow = previewVisible ? "hidden" : "auto"
+	}, [previewVisible])
+
 	return (
-		<div className="items-center justify-around flex flex-wrap  h-full">
-			{images.map((image, index) => {
-				return (
-					<div
-						key={index}
-						className="h-[400px] my-10 mx-10"
-					>
-						<Image
+		<>
+			{previewVisible && (
+				<GalleryPreview
+					setPreviewVisible={setPreviewVisible}
+					startIndex={startIndex.current}
+				/>
+			)}
+			<div className="items-center justify-around flex flex-wrap h-full">
+				{galleryImages.map((image, index) => {
+					return (
+						<div
 							key={index}
-							alt="gallery"
-							src={image}
-							width={550}
-							height={500}
-							style={{
-								height: "100%",
-								objectFit: "cover",
+							className="h-[400px] my-10 mx-10"
+							onClick={() => {
+								setPreviewVisible(true)
+								startIndex.current = index
 							}}
-						/>
-					</div>
-				)
-			})}
-		</div>
+						>
+							<Image
+								key={index}
+								alt="gallery"
+								src={image}
+								width={550}
+								height={500}
+								style={{
+									height: "100%",
+									objectFit: "cover",
+								}}
+								className="hover:opacity-70 hover:scale-105 rounded-xl ease-in-out transition-all duration-200"
+							/>
+						</div>
+					)
+				})}
+			</div>
+		</>
 	)
 }
