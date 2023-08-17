@@ -55,7 +55,7 @@ export default function Gallery({
 							}
 						>
 							{img?.title && (
-								<h2 className="w-full text-white text-1xl font-bold p-2 bg-gradient-to-r from-[#91b199d0] to-[#81b9e79d]">
+								<h2 className="w-full text-white text-2xl font-bold p-2">
 									{img.title}
 								</h2>
 							)}
