@@ -3,9 +3,7 @@
 import { useLayoutEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { FaGithub, FaArrowLeft } from "react-icons/fa"
 
-import ScrollButton from "../ScrollButton"
 import useScrollDirection from "@/hooks/useScrollDirection"
 
 export default function Navbar() {
@@ -53,9 +51,12 @@ export default function Navbar() {
 				>
 					NEREDE
 				</a>
-				<ScrollButton>
-					<p className="text-md max-lg:text-sm hover:opacity-50">ÜRÜNLER</p>
-				</ScrollButton>
+				<a
+					href="#products"
+					className="text-lg max-lg:text-sm hover:opacity-50"
+				>
+					ÜRÜNLER
+				</a>
 			</div>
 		</div>
 	)

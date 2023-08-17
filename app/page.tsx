@@ -2,13 +2,15 @@ import Gallery from "@/components/Gallery"
 import Image from "next/image"
 import { FaPhone } from "react-icons/fa"
 
+import { galleryImages, productImages_1, productImages_2 } from "@/utils/constants"
+
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
 			<section className="w-full min-h-screen items-center justify-center">
 				{/* VIDEO BACKGROUND */}
 				<video
-					className="w-full h-screen object-cover mt-[-7vh]"
+					className="w-full h-screen object-cover mt-[-7vh] brightness-50 backdrop-blur-sm"
 					autoPlay
 					loop
 					muted
@@ -34,18 +36,57 @@ export default function Home() {
 			</section>
 
 			{/* GALLERY */}
-			<section className="w-full mt-[-7vh] bg-gradient-to-b from-[#0c0c0c] to-[#141414]">
-				<Gallery />
+
+			<section className="w-full mt-[-7vh] bg-gradient-to-b from-[#000] to-[#0c0c0c]">
+				<Gallery
+					justify="justify-around"
+					images={galleryImages}
+					w={"w-[500px]"}
+					h={"h-[350px]"}
+					mx={"mx-10"}
+					my={"my-10"}
+				/>
 			</section>
 
-			{/* CONTACT & ADRESS */}
+			{/* PRODUCTS 1 */}
+
+			<section
+				id="products"
+				className="w-full bg-gradient-to-b from-[#000] to-[#0c0c0c] pt-20"
+			>
+				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
+				<Gallery
+					justify="justify-center"
+					images={productImages_1}
+					w={"w-[300px]"}
+					h={"h-[300px]"}
+					mx={"mx-5"}
+					my={"my-5"}
+				/>
+			</section>
+
+			{/* PRODUCTS 2 */}
+
+			<section className="w-full bg-gradient-to-b from-[#0c0c0c] to-[#000] pb-10 pt-20">
+				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
+				<Gallery
+					justify="justify-center"
+					images={productImages_2}
+					w={"w-[300px]"}
+					h={"h-[300px]"}
+					mx={"mx-10"}
+					my={"my-10"}
+				/>
+			</section>
+
+			{/* WHERE */}
 			<section
 				id="where"
 				className="w-full h-screen pt-20 bg-gradient-to-t from-[#0c0c0c] to-[#141414]"
 			>
 				<div className="flex flex-col items-center justify-centers m-auto">
 					{/* TITLE */}
-					<h1 className="text-7xl text-center font-black tracking-widest">NEREDE</h1>
+					<h1 className="text-7xl max-sm:text-6xl text-center font-black tracking-widest">NEREDE</h1>
 
 					{/* ADRESS */}
 					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">Rumeli Kavağı, Karakütük Cd. No:38</h2>

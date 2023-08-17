@@ -2,32 +2,42 @@
 
 import { useEffect, useState } from "react"
 import Image from "next/image"
+
 import { AiOutlineClose } from "react-icons/ai"
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
 
-import { galleryImages } from "@/utils/constants"
-
 export default function GalleryPreview({
+	images,
 	setPreviewVisible,
 	startIndex,
 }: {
+	images: GImage[]
 	setPreviewVisible: React.Dispatch<React.SetStateAction<boolean>>
 	startIndex: number
 }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(startIndex)
-	const [fade, setFade] = useState(0)
+	const [fade, setFade] = useState({
+		opacity: "opacity-0",
+		duration: "duration-0",
+	})
 
 	useEffect(() => {
 		setTimeout(() => {
-			setFade(1)
+			setFade({
+				opacity: "opacity-100",
+				duration: "duration-300",
+			})
 		}, 250)
 	}, [currentImageIndex])
 
 	const handleChange = (direction: string) => {
-		setFade(0)
+		setFade({
+			opacity: "opacity-0",
+			duration: "duration-0",
+		})
 
 		if (direction === "next") {
-			if (currentImageIndex >= galleryImages.length - 1) {
+			if (currentImageIndex >= images.length - 1) {
 				setCurrentImageIndex(0)
 			} else {
 				setCurrentImageIndex((prev) => prev + 1)
@@ -36,7 +46,7 @@ export default function GalleryPreview({
 
 		if (direction === "prev") {
 			if (currentImageIndex === 0) {
-				setCurrentImageIndex(galleryImages.length - 1)
+				setCurrentImageIndex(images.length - 1)
 			} else {
 				setCurrentImageIndex((prev) => prev - 1)
 			}
@@ -77,12 +87,12 @@ export default function GalleryPreview({
 				<div className="relative h-full w-2/3 m-10 max-md:w-11/12">
 					<Image
 						alt="gallery"
-						src={galleryImages[currentImageIndex]}
+						src={images[currentImageIndex].src + "media?size=l"}
 						fill
 						style={{
 							objectFit: "contain",
 						}}
-						className={`transition-all duration-${fade === 0 ? 0 : 300} ease-in-out opacity-${fade}`}
+						className={"transition-all ease-in-out " + fade.opacity + " " + fade.duration}
 					/>
 				</div>
 
@@ -92,7 +102,7 @@ export default function GalleryPreview({
 				</div>
 
 				{/* MOBILE PREV/NEXT BUTTONS */}
-				<div className="max-md:flex hidden">
+				<div className="max-md:flex hidden absolute bottom-12">
 					<ChangeImageButton dir={"prev"} />
 					<ChangeImageButton dir={"next"} />
 				</div>

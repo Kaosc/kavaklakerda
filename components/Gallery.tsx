@@ -3,10 +3,23 @@
 import Image from "next/image"
 import React, { useEffect, useRef } from "react"
 import { useState } from "react"
-import { galleryImages } from "@/utils/constants"
 import GalleryPreview from "./GalleryPreview"
 
-export default function Gallery() {
+export default function Gallery({
+	images,
+	w,
+	h,
+	mx,
+	my,
+	justify,
+}: {
+	images: GImage[]
+	w?: string
+	h?: string
+	mx: string
+	my: string
+	justify?: string
+}) {
 	const [previewVisible, setPreviewVisible] = useState(false)
 	const startIndex = useRef(0)
 
@@ -21,31 +34,46 @@ export default function Gallery() {
 				<GalleryPreview
 					setPreviewVisible={setPreviewVisible}
 					startIndex={startIndex.current}
+					images={images}
 				/>
 			)}
-			<div className="items-center justify-around flex flex-wrap h-full">
-				{galleryImages.map((image, index) => {
+			<div className={"items-center flex flex-wrap h-full " + justify}>
+				{images.map((img: GImage, index: number) => {
 					return (
 						<div
 							key={index}
-							className="h-[400px] my-10 mx-10"
-							onClick={() => {
-								setPreviewVisible(true)
-								startIndex.current = index
-							}}
+							className={
+								"relative " +
+								w +
+								" " +
+								h +
+								" " +
+								mx +
+								" " +
+								my +
+								" hover:opacity-70 hover:scale-105 ease-in-out transition-all duration-200"
+							}
 						>
-							<Image
-								key={index}
-								alt="gallery"
-								src={image}
-								width={550}
-								height={500}
-								style={{
-									height: "100%",
-									objectFit: "cover",
+							{img?.title && (
+								<h2 className="w-full text-white text-1xl font-bold p-2 bg-gradient-to-r from-[#91b199d0] to-[#81b9e79d]">
+									{img.title}
+								</h2>
+							)}
+							<div
+								onClick={() => {
+									setPreviewVisible(true)
+									startIndex.current = index
 								}}
-								className="hover:opacity-70 hover:scale-105 rounded-xl ease-in-out transition-all duration-200"
-							/>
+								className="relative w-full h-full"
+							>
+								<Image
+									key={index}
+									alt="gallery"
+									src={img.src + "media?size=l"}
+									fill
+									className="object-cover rounded-bl-2xl rounded-br-2xl"
+								/>
+							</div>
 						</div>
 					)
 				})}
