@@ -2,7 +2,7 @@ import Gallery from "@/components/Gallery"
 import Image from "next/image"
 import { FaPhone } from "react-icons/fa"
 
-import { galleryImages, productImages_1, productImages_2 } from "@/utils/constants"
+import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
 
 export default function Home() {
 	return (

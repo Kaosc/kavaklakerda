@@ -47,7 +47,7 @@ export const productImages_2 = [
 	},
 	{
 		src: "https://www.instagram.com/p/Cimdz0hrvI5/",
-		title: "Torik Füme Lokma Kavanoz",
+		title: "Torik Füme Lokma",
 	},
 	{
 		src: "https://www.instagram.com/p/ChkPIfaLSLK/",
