@@ -94,7 +94,7 @@ export default function Home() {
 
 					{/* PHONE */}
 					<a
-						href="tel:+9005534945099"
+						href="tel:+905534945099"
 						className="mt-10 flex items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 					>
 						<FaPhone size={29} />
