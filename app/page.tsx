@@ -34,6 +34,13 @@ export default function Home() {
 						width={150}
 						height={150}
 					/>
+
+					{/* https://www.instagram.com/kavaklakerda */}
+					{/* https://www.facebook.com/kavaklakerda */}
+					{/* +905534945099 */}
+					{/* Şehir içi & Şehirler arası Kargo */}
+					{/* Bilgi&Sipariş 05534945099 */}
+
 				</div>
 			</section>
 
@@ -91,7 +98,7 @@ export default function Home() {
 					<h1 className="text-7xl max-sm:text-6xl text-center font-black tracking-widest">NEREDE</h1>
 
 					{/* ADRESS */}
-					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">Rumeli Kavağı, Karakütük Cd. No:38</h2>
+					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">Rumeli Kavağı Mah. Liman Cad. No:38/A</h2>
 					<h2 className="text-3xl max-sm:text-2xl text-center">34450 Sarıyer/İstanbul</h2>
 
 					{/* PHONE */}
