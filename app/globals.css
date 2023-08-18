@@ -23,6 +23,42 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* 
+  Scroll Bar 
+*/
+
 * {
   scroll-behavior: smooth;
+}
+
+* {
+  --scroll-bg: #1e4d79;
+  --scroll-fg: #093053;
+  --scroll-fg-hover: #02203a;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(#0096C7) var(--scroll-bg);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scroll-bg);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-fg);
+  border-radius: 14px;
+  border: 3px solid var(--scroll-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-fg-hover);
 }

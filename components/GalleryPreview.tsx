@@ -57,7 +57,7 @@ export default function GalleryPreview({
 		return (
 			<button
 				onClick={() => handleChange(dir)}
-				className="text-6xl text-white m-4 rounded-xl p-1 hover:opacity-70 hover:scale-110"
+				className="text-6xl m-4 rounded-xl p-1 hover:opacity-70 hover:scale-110 text-[#0096C7]"
 			>
 				{dir === "next" ? <FaArrowRight size={50} /> : <FaArrowLeft size={50} />}
 			</button>
@@ -72,7 +72,7 @@ export default function GalleryPreview({
 					<button
 						type="button"
 						onClick={() => setPreviewVisible(false)}
-						className="text-6xl text-white m-4 rounded-xl p-1 hover:opacity-70 hover:scale-110"
+						className="text-6xl text-[#0096C7] m-4 rounded-xl p-1 hover:opacity-70 hover:scale-110"
 					>
 						<AiOutlineClose />
 					</button>

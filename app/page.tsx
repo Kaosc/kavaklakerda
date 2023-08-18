@@ -10,13 +10,15 @@ export default function Home() {
 			<section className="w-full min-h-screen items-center justify-center">
 				{/* VIDEO BACKGROUND */}
 				<video
-					className="w-full h-screen object-cover mt-[-7vh] brightness-50 backdrop-blur-sm"
+					className="w-full h-screen object-cover mt-[-7vh]"
 					autoPlay
 					loop
 					muted
-					src="https://i.imgur.com/Tu0UM4O.mp4"
+					src="https://i.imgur.com/5AOm4WR.mp4"
 					typeof="video/mp4"
 				></video>
+
+				<div className="absolute top-0 left-0 right-0 h-screen bg-gradient-to-b from-[#00000000] to-[#031d35d7]"></div>
 
 				<div className="absolute top-20 left-0 right-0 flex flex-col justify-center items-center">
 					{/* TITLE */}
@@ -26,18 +28,18 @@ export default function Home() {
 
 					{/* LOGO */}
 					<Image
-						className="mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200	"
+						className="mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200"
 						src="/assets/logo.png"
 						alt="logo"
-						width={120}
-						height={120}
+						width={150}
+						height={150}
 					/>
 				</div>
 			</section>
 
 			{/* GALLERY */}
 
-			<section className="w-full mt-[-7vh] bg-gradient-to-b from-[#000] to-[#0c0c0c]">
+			<section className="w-full mt-[-7vh] bg-gradient-to-b from-[#031d35b4] to-[#2b5b88]">
 				<Gallery
 					justify="justify-around"
 					images={galleryImages}
@@ -52,7 +54,7 @@ export default function Home() {
 
 			<section
 				id="products"
-				className="w-full bg-gradient-to-b from-[#000] to-[#0c0c0c] pt-20"
+				className="w-full bg-gradient-to-b from-[#2b5b88] to-[#1b3a57] pt-20"
 			>
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
@@ -67,7 +69,7 @@ export default function Home() {
 
 			{/* PRODUCTS 2 */}
 
-			<section className="w-full bg-gradient-to-b from-[#0c0c0c] to-[#000] pb-10 pt-20">
+			<section className="w-full bg-gradient-to-b from-[#1b3a57] to-[#021a30] pb-10 pt-20">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"
@@ -82,7 +84,7 @@ export default function Home() {
 			{/* WHERE */}
 			<section
 				id="where"
-				className="w-full h-screen pt-20 bg-gradient-to-t from-[#0c0c0c] to-[#141414]"
+				className="w-full h-screen pt-20 bg-gradient-to-b from-[#021a30] to-[#011425]"
 			>
 				<div className="flex flex-col items-center justify-centers m-auto">
 					{/* TITLE */}

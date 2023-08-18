@@ -51,7 +51,7 @@ export default function Gallery({
 								mx +
 								" " +
 								my +
-								" hover:opacity-70 hover:scale-105 ease-in-out transition-all duration-200"
+								" hover:saturate-150 brightness-105 hover:scale-105 ease-in-out transition-all duration-200"
 							}
 						>
 							{img?.title && (
@@ -71,7 +71,7 @@ export default function Gallery({
 									alt="gallery"
 									src={img.src + "media?size=l"}
 									fill
-									className="object-cover rounded-bl-2xl rounded-br-2xl"
+									className="object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
 								/>
 							</div>
 						</div>
