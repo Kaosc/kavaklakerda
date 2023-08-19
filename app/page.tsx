@@ -8,7 +8,10 @@ import Link from "next/link"
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
-			<section id="home" className="w-full min-h-screen items-center justify-center">
+			<section
+				id="home"
+				className="w-full min-h-screen items-center justify-center"
+			>
 				{/* VIDEO BACKGROUND */}
 				<video
 					className="w-full h-screen object-cover mt-[-7vh]"
@@ -46,11 +49,10 @@ export default function Home() {
 						</p>
 						<Link
 							href="tel:+905534945099"
+							target="_blank"
 							className="mt-5 flex max-sm:flex-col-reverse items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 						>
-							<div
-								className="max-sm:mt-5"
-							>
+							<div className="max-sm:mt-5">
 								<FaPhone size={35} />
 							</div>
 							<p className="text-3xl max-sm:text-2xl max:sm:mb-5 text-center ml-4 px-3">+90 553 494 50 99</p>
@@ -58,11 +60,12 @@ export default function Home() {
 					</div>
 
 					{/* SOCIAL MEDIA */}
-					<h2 className="text-3xl max-sm:text-2xl text-center mt-20 px-5">
-						Sosyal medya hesaplarımız
-					</h2>
+					<h2 className="text-3xl max-sm:text-2xl text-center mt-20 px-5">Sosyal medya hesaplarımız</h2>
 					<div className="flex flex-row justify-center items-center">
-						<Link href="https://www.instagram.com/kavaklakerda">
+						<Link
+							href="https://www.instagram.com/kavaklakerda"
+							target="_blank"
+						>
 							<SiInstagram
 								className="mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
 								size={50}
@@ -81,7 +84,7 @@ export default function Home() {
 			{/* GALLERY */}
 
 			<section className="w-full mt-[-7vh] bg-gradient-to-b from-[#053057] to-[#2b5b88]">
-			<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
+				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 
 				<Gallery
 					justify="justify-around"
@@ -142,6 +145,7 @@ export default function Home() {
 					{/* PHONE */}
 					<Link
 						href="tel:+905534945099"
+						target="_blank"
 						className="mt-10 flex items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 					>
 						<FaPhone size={29} />
@@ -154,7 +158,6 @@ export default function Home() {
 						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48046.38772473157!2d29.073538!3d41.180365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409fdfd9e82d2cad%3A0x4264152b9c228659!2zS2F2YWsgTGFrZXJkYSBCYWzEsWsgxZ5hcmvDvHRlcmk!5e0!3m2!1str!2str!4v1692214461035!5m2!1str!2str"
 						loading="lazy"
 					></iframe>
-
 				</div>
 			</section>
 		</main>
