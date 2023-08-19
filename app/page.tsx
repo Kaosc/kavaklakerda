@@ -23,10 +23,10 @@ export default function Home() {
 
 				<div className="absolute top-20 left-0 right-0 flex flex-col justify-center items-center">
 					{/* TITLE */}
-					<h1 className="max-sm:text-4xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
+					<h1 className="max-sm:text-3xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
 					</h1>
-					<h3 className="max-sm:text-2xl mt-5 text-4xl text-center font-black tracking-widest">
+					<h3 className="max-sm:text-xl mt-5 text-4xl text-center font-black tracking-widest">
 						BALIK ŞARKÜTERİ
 					</h3>
 
@@ -46,10 +46,14 @@ export default function Home() {
 						</p>
 						<Link
 							href="tel:+905534945099"
-							className="mt-5 flex items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
+							className="mt-5 flex max-sm:flex-col-reverse items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 						>
-							<FaPhone size={35} />
-							<p className="text-3xl max-sm:text-2xl text-center ml-4">+90 553 494 50 99</p>
+							<div
+								className="max-sm:mt-5"
+							>
+								<FaPhone size={35} />
+							</div>
+							<p className="text-3xl max-sm:text-2xl max:sm:mb-5 text-center ml-4 px-3">+90 553 494 50 99</p>
 						</Link>
 					</div>
 
@@ -57,10 +61,10 @@ export default function Home() {
 					<h2 className="text-3xl max-sm:text-2xl text-center mt-20 px-5">
 						Sosyal medya hesaplarımız
 					</h2>
-					<div className="flex flex-row w-1/12 justify-around items-center">
+					<div className="flex flex-row justify-center items-center">
 						<Link href="https://www.instagram.com/kavaklakerda">
 							<SiInstagram
-								className="mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
+								className="mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
 								size={50}
 							/>
 						</Link>
