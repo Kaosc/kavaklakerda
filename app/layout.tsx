@@ -7,8 +7,8 @@ import NavbarMargin from "@/components/navbar/NavbarMargin"
 import Footer from "@/components/footer/Footer"
 
 export const metadata = {
-	title: "Kavaklakerda",
-	description: "A fish delicatessen in Istanbul, Turkey",
+	title: "Kavaklakerda | Balık Şarküteri",
+	description: "Balık ve deniz ürünleri konusunda uzmanlaşmış, İstanbul'un en iyi balık şarküterisi.",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			/>
 			<meta
 				name="keywords"
-				content="kavaklakerda, kavaklakerda.com, kavaklakerda istanbul, kavaklakerda turkey, kavaklakerda fish, kavaklakerda fish delicatessen, kavaklakerda fish delicatessen istanbul, kavaklakerda fish delicatessen turkey, kavaklakerda fish delicatessen fish, kavaklakerda fish delicatessen fish istanbul, kavaklakerda fish delicatessen fish turkey, kavaklakerda fish delicatessen fish delicatessen, kavaklakerda fish delicatessen fish delicatessen istanbul, kavaklakerda fish delicatessen fish delicatessen turkey"
+				content="kavaklakerda, kavaklakerda istanbul, balık, balık şarküteri, balık ve deniz ürünleri, rumeli, rumeli kavağı, rumeli kavağı balık, kavaklakerda turkey, kavaklakerda fish, kavaklakerda fish delicatessen, kavaklakerda fish delicatessen istanbul, kavaklakerda fish delicatessen turkey, kavaklakerda fish delicatessen fish, kavaklakerda fish delicatessen fish istanbul, kavaklakerda fish delicatessen fish turkey, kavaklakerda fish delicatessen fish delicatessen, kavaklakerda fish delicatessen fish delicatessen istanbul, kavaklakerda fish delicatessen fish delicatessen turkey İstanbul/"
 			/>
 			<meta
 				name="theme-color"
