@@ -8,12 +8,10 @@ import Link from "next/link"
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
-			<section
-				id="home"
-				className="w-full min-h-screen items-center justify-center"
-			>
+			<section className="w-full min-h-screen items-center justify-center">
 				{/* VIDEO BACKGROUND */}
 				<video
+					id="home"
 					className="w-full h-screen object-cover mt-[-7vh]"
 					autoPlay
 					loop
