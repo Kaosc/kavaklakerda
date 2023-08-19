@@ -2,12 +2,12 @@ export const galleryImages = [
 	{ src: "https://www.instagram.com/p/CimbWlbLnHd/" },
 	{ src: "https://www.instagram.com/p/Cimdk7mLdD1/" },
 	{ src: "https://www.instagram.com/p/CimbjpsLZKS/" },
-	// "https://www.instagram.com/p/Cg6-fTJsGxw/",
-	// "https://www.instagram.com/p/CGXYCBxAT1i/",
-	// "https://www.instagram.com/p/CimeJx_rUOQ/",
-	// "https://www.instagram.com/p/CeYQ2VPLLOl/",
-	// "https://www.instagram.com/p/Cg68eBLseE1/",
-	// "https://www.instagram.com/p/CtTSCyorsRb/",
+	// { src: "https://www.instagram.com/p/Cg6-fTJsGxw/" },
+	// { src: "https://www.instagram.com/p/CGXYCBxAT1i/" },
+	// { src: "https://www.instagram.com/p/CimeJx_rUOQ/" },
+	// { src: "https://www.instagram.com/p/CeYQ2VPLLOl/" },
+	// { src: "https://www.instagram.com/p/Cg68eBLseE1/" },
+	// { src: "https://www.instagram.com/p/CtTSCyorsRb/" },
 ]
 
 export const productImages_1 = [

@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 import NavbarMargin from "@/components/navbar/NavbarMargin"
+import Footer from "@/components/footer/Footer"
 
 export const metadata = {
 	title: "Kavaklakerda",
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<NavbarMargin />
 				<Navbar />
 				{children}
+				<Footer/>
 			</body>
 		</html>
 	)

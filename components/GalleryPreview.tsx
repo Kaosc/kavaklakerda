@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
 
 import { AiOutlineClose } from "react-icons/ai"
@@ -21,16 +21,7 @@ export default function GalleryPreview({
 		duration: "duration-0",
 	})
 
-	useEffect(() => {
-		setTimeout(() => {
-			setFade({
-				opacity: "opacity-100",
-				duration: "duration-300",
-			})
-		}, 250)
-	}, [currentImageIndex])
-
-	const handleChange = (direction: string) => {
+	const handleChange = useCallback((direction: string) => {
 		setFade({
 			opacity: "opacity-0",
 			duration: "duration-0",
@@ -51,7 +42,30 @@ export default function GalleryPreview({
 				setCurrentImageIndex((prev) => prev - 1)
 			}
 		}
-	}
+	}, [currentImageIndex, images])
+	
+	const keyDownAction = useCallback((e: KeyboardEvent) => {
+		console.log(e.key)
+		if (e.key === "Escape" || e.key === "Q" || e.key === "q") setPreviewVisible(false)
+		if (e.key === "ArrowRight" || e.key === "D" || e.key === "d") handleChange("next")
+		if (e.key === "ArrowLeft" || e.key === "A" || e.key === "a") handleChange("prev")
+	}, [handleChange, setPreviewVisible])
+
+	useEffect(() => {
+		addEventListener("keydown", keyDownAction)
+		return () => removeEventListener("keydown", keyDownAction)
+	}, [keyDownAction])
+
+	useEffect(() => {
+		const t = setTimeout(() => {
+			setFade({
+				opacity: "opacity-100",
+				duration: "duration-300",
+			})
+		}, 250)
+
+		return () => clearTimeout(t)
+	}, [currentImageIndex])
 
 	const ChangeImageButton = ({ dir }: { dir: string }) => {
 		return (

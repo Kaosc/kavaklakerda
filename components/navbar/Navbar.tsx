@@ -37,25 +37,23 @@ export default function Navbar() {
 			}}
 		>
 			<div className="flex h-screen-10 self-center items-center justify-evenly shadow-xl h-[7vh]">
-				{pathname !== "/contact" && (
-					<Link
-						href="/contact"
-						className="text-lg max-lg:text-sm hover:opacity-50"
-					>
-						İLETİŞİM
-					</Link>
-				)}
-				<a
-					href="#where"
-					className="text-lg max-lg:text-sm hover:opacity-50"
-				>
-					NEREDE
-				</a>
 				<a
 					href="#products"
 					className="text-lg max-lg:text-sm hover:opacity-50"
 				>
 					ÜRÜNLER
+				</a>
+				<a
+					href="#home"
+					className="text-lg max-lg:text-sm hover:opacity-50"
+				>
+					ANA SAYFA
+				</a>
+				<a
+					href="#where"
+					className="text-lg max-lg:text-sm hover:opacity-50"
+				>
+					NEREDE
 				</a>
 			</div>
 		</div>
