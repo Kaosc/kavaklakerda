@@ -21,35 +21,41 @@ export default function GalleryPreview({
 		duration: "duration-0",
 	})
 
-	const handleChange = useCallback((direction: string) => {
-		setFade({
-			opacity: "opacity-0",
-			duration: "duration-0",
-		})
+	const handleChange = useCallback(
+		(direction: string) => {
+			setFade({
+				opacity: "opacity-0",
+				duration: "duration-0",
+			})
 
-		if (direction === "next") {
-			if (currentImageIndex >= images.length - 1) {
-				setCurrentImageIndex(0)
-			} else {
-				setCurrentImageIndex((prev) => prev + 1)
+			if (direction === "next") {
+				if (currentImageIndex >= images.length - 1) {
+					setCurrentImageIndex(0)
+				} else {
+					setCurrentImageIndex((prev) => prev + 1)
+				}
 			}
-		}
 
-		if (direction === "prev") {
-			if (currentImageIndex === 0) {
-				setCurrentImageIndex(images.length - 1)
-			} else {
-				setCurrentImageIndex((prev) => prev - 1)
+			if (direction === "prev") {
+				if (currentImageIndex === 0) {
+					setCurrentImageIndex(images.length - 1)
+				} else {
+					setCurrentImageIndex((prev) => prev - 1)
+				}
 			}
-		}
-	}, [currentImageIndex, images])
-	
-	const keyDownAction = useCallback((e: KeyboardEvent) => {
-		console.log(e.key)
-		if (e.key === "Escape" || e.key === "Q" || e.key === "q") setPreviewVisible(false)
-		if (e.key === "ArrowRight" || e.key === "D" || e.key === "d") handleChange("next")
-		if (e.key === "ArrowLeft" || e.key === "A" || e.key === "a") handleChange("prev")
-	}, [handleChange, setPreviewVisible])
+		},
+		[currentImageIndex, images]
+	)
+
+	const keyDownAction = useCallback(
+		(e: KeyboardEvent) => {
+			console.log(e.key)
+			if (e.key === "Escape" || e.key === "Q" || e.key === "q") setPreviewVisible(false)
+			if (e.key === "ArrowRight" || e.key === "D" || e.key === "d") handleChange("next")
+			if (e.key === "ArrowLeft" || e.key === "A" || e.key === "a") handleChange("prev")
+		},
+		[handleChange, setPreviewVisible]
+	)
 
 	useEffect(() => {
 		addEventListener("keydown", keyDownAction)

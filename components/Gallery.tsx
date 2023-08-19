@@ -54,11 +54,7 @@ export default function Gallery({
 								" hover:saturate-150 brightness-105 hover:scale-105 ease-in-out transition-all duration-200"
 							}
 						>
-							{img?.title && (
-								<h2 className="w-full text-white text-2xl font-bold p-2">
-									{img.title}
-								</h2>
-							)}
+							{img?.title && <h2 className="w-full text-white text-2xl font-bold p-2">{img.title}</h2>}
 							<div
 								onClick={() => {
 									setPreviewVisible(true)

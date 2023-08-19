@@ -69,7 +69,10 @@ export default function Home() {
 								size={50}
 							/>
 						</Link>
-						<Link href="https://www.facebook.com/kavaklakerda">
+						<Link
+							href="https://www.facebook.com/kavaklakerda"
+							target="_blank"
+						>
 							<SiFacebook
 								className="mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
 								size={50}
