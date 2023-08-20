@@ -103,10 +103,8 @@ export default function GalleryPreview({
 						alt="gallery"
 						src={images[currentImageIndex].src + "media?size=l"}
 						fill
-						style={{
-							objectFit: "contain",
-						}}
-						className={`ease-in-out duration-${fade.duration === "0" ? "0" : "300"} opacity-${fade.opacity}`}
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+						className={`object-contain ease-in-out duration-${fade.duration === "0" ? "0" : "300"} opacity-${fade.opacity}`}
 					/>
 				</div>
 

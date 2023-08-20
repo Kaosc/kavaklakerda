@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
+
 import { FaPhone, FaWhatsapp } from "react-icons/fa"
 import { SiInstagram, SiFacebook } from "react-icons/si"
-import { Tooltip } from "@nextui-org/tooltip"
 
 import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
 
@@ -12,13 +12,13 @@ import {
 	BACKGROUND_VIDEO_URL,
 	FACEBOOK_URL,
 	INSTAGRAM_URL,
-	PHONE_NUMBER,
 	PHONE_URL,
 	WHATSAPP_URL,
 	X_URL,
 } from "@/utils/constants"
 import XIcon from "@/components/XIcon"
 import PhoneNumber from "@/components/PhoneNumber"
+import ActiveTimes from "@/components/workingTimes/ActiveTimes"
 
 export default function Home() {
 	return (
@@ -44,7 +44,7 @@ export default function Home() {
 
 				<div className="absolute top-20 bottom-0 left-0 right-0 flex flex-col justify-center items-center">
 					{/* TITLE */}
-					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
+					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
 					</h1>
 					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest">
@@ -58,7 +58,10 @@ export default function Home() {
 						alt="logo"
 						width={150}
 						height={150}
+						priority
 					/>
+
+					<ActiveTimes />
 
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5">
@@ -87,31 +90,33 @@ export default function Home() {
 					</div>
 
 					{/* SOCIAL MEDIA */}
-					<h2 className="text-3xl font-semibold max-mobile:text-base max-sm:text-2xl text-center mt-20 px-5">
-						Sosyal Medya Hesaplarımız
-					</h2>
-					<div className="flex flex-row justify-center items-center">
-						<Link
-							href={X_URL}
-							target="_blank"
-						>
-							<XIcon
-								size="text-[45px]"
-								style="max-sm:text-[34px] max-mobile:text-[32px] hover:text-cyan-300"
-							/>
-						</Link>
-						<Link
-							href={INSTAGRAM_URL}
-							target="_blank"
-						>
-							<SiInstagram className="text-[35px] max-sm:text-[28px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
-						</Link>
-						<Link
-							href={FACEBOOK_URL}
-							target="_blank"
-						>
-							<SiFacebook className="text-[35px] max-sm:text-[30px] max-mobile:text-[27px] mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
-						</Link>
+					<div>
+						<h2 className="text-3xl font-semibold max-mobile:text-base max-sm:text-2xl text-center mt-20 px-5">
+							Sosyal Medya Hesaplarımız
+						</h2>
+						<div className="flex flex-row justify-center items-center">
+							<Link
+								href={X_URL}
+								target="_blank"
+							>
+								<XIcon
+									size="text-[45px]"
+									style="max-sm:text-[34px] max-mobile:text-[32px] hover:text-cyan-300"
+								/>
+							</Link>
+							<Link
+								href={INSTAGRAM_URL}
+								target="_blank"
+							>
+								<SiInstagram className="text-[35px] max-sm:text-[28px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
+							</Link>
+							<Link
+								href={FACEBOOK_URL}
+								target="_blank"
+							>
+								<SiFacebook className="text-[35px] max-sm:text-[30px] max-mobile:text-[27px] mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
+							</Link>
+						</div>
 					</div>
 				</div>
 			</section>
