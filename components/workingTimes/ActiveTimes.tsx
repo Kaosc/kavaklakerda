@@ -20,7 +20,14 @@ export default function ActiveTimes() {
 
 	const defaultTimerState = useMemo(() => {
 		return {
-			hours: hour === CLOSE_HOURS ? 11 : hour > CLOSE_HOURS ? 24 - hour + OPEN_HOURS : CLOSE_HOURS - hour,
+			hours:
+				hour === CLOSE_HOURS
+					? 11
+					: hour === 0
+					? 9
+					: hour > CLOSE_HOURS
+					? 24 - hour + OPEN_HOURS
+					: CLOSE_HOURS - hour,
 			min: min === 0 ? 59 : min === 59 ? 0 : 59 - min,
 			sec: sec === 0 ? 59 : sec === 59 ? 0 : 59 - sec,
 		}
@@ -72,7 +79,6 @@ export default function ActiveTimes() {
 
 	return (
 		<div className="w-full max-sm:text-2xl max-mobile:text-xl shadow-3xl shadow-black mt-5 text-3xl text-center">
-
 			{/* WORKING HOURS */}
 			<div className={`flex flex-col justify-center items-center mt-5`}>
 				<div className="flex flex-row justify-center items-center">
@@ -81,7 +87,7 @@ export default function ActiveTimes() {
 					<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
 				</div>
 			</div>
-			
+
 			{/* TIMER & STATUS */}
 			<ActiveStatus
 				timer={timer}
