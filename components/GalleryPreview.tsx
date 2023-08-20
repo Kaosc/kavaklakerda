@@ -16,16 +16,13 @@ export default function GalleryPreview({
 	startIndex: number
 }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(startIndex)
-	const [fade, setFade] = useState({
-		opacity: "opacity-0",
-		duration: "duration-0",
-	})
+	const [fade, setFade] = useState({ opacity: "0", duration: "0" })
 
 	const handleChange = useCallback(
 		(direction: string) => {
 			setFade({
-				opacity: "opacity-0",
-				duration: "duration-0",
+				opacity: "0",
+				duration: "0",
 			})
 
 			if (direction === "next") {
@@ -49,7 +46,6 @@ export default function GalleryPreview({
 
 	const keyDownAction = useCallback(
 		(e: KeyboardEvent) => {
-			console.log(e.key)
 			if (e.key === "Escape" || e.key === "Q" || e.key === "q") setPreviewVisible(false)
 			if (e.key === "ArrowRight" || e.key === "D" || e.key === "d") handleChange("next")
 			if (e.key === "ArrowLeft" || e.key === "A" || e.key === "a") handleChange("prev")
@@ -63,23 +59,21 @@ export default function GalleryPreview({
 	}, [keyDownAction])
 
 	useEffect(() => {
-		const t = setTimeout(() => {
+		setTimeout(() => {
 			setFade({
-				opacity: "opacity-100",
-				duration: "duration-300",
+				opacity: "100",
+				duration: "300",
 			})
-		}, 250)
-
-		return () => clearTimeout(t)
+		}, 200)
 	}, [currentImageIndex])
 
-	const ChangeImageButton = ({ dir }: { dir: string }) => {
+	const ChangeImageButton = ({ direction }: { direction: string }) => {
 		return (
 			<button
-				onClick={() => handleChange(dir)}
+				onClick={() => handleChange(direction)}
 				className="text-6xl m-4 rounded-xl p-1 hover:opacity-70 hover:scale-110 text-[#0096C7]"
 			>
-				{dir === "next" ? <FaArrowRight size={50} /> : <FaArrowLeft size={50} />}
+				{direction === "next" ? <FaArrowRight size={50} /> : <FaArrowLeft size={50} />}
 			</button>
 		)
 	}
@@ -100,11 +94,11 @@ export default function GalleryPreview({
 
 				{/* PREV BUTTON */}
 				<div className="max-md:hidden">
-					<ChangeImageButton dir={"prev"} />
+					<ChangeImageButton direction={"prev"} />
 				</div>
 
 				{/* IMAGE */}
-				<div className="relative h-full w-2/3 m-10 max-md:w-11/12">
+				<div className="relative h-full w-2/3 m-10 max-md:w-11/12 max-md:bottom-12">
 					<Image
 						alt="gallery"
 						src={images[currentImageIndex].src + "media?size=l"}
@@ -112,19 +106,19 @@ export default function GalleryPreview({
 						style={{
 							objectFit: "contain",
 						}}
-						className={"transition-all ease-in-out " + fade.opacity + " " + fade.duration}
+						className={`ease-in-out duration-${fade.duration === "0" ? "0" : "300"} opacity-${fade.opacity}`}
 					/>
 				</div>
 
 				{/* NEXT BUTTON */}
 				<div className="max-md:hidden">
-					<ChangeImageButton dir={"next"} />
+					<ChangeImageButton direction={"next"} />
 				</div>
 
 				{/* MOBILE PREV/NEXT BUTTONS */}
 				<div className="max-md:flex hidden absolute bottom-12">
-					<ChangeImageButton dir={"prev"} />
-					<ChangeImageButton dir={"next"} />
+					<ChangeImageButton direction={"prev"} />
+					<ChangeImageButton direction={"next"} />
 				</div>
 			</div>
 		</div>
