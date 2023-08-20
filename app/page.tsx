@@ -72,14 +72,14 @@ export default function Home() {
 									target="_blank"
 									className="hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 								>
-									<FaWhatsapp className="text-[36px] max-sm:text-[30px] max-mobile:text-[25px] mr-5" />
+									<FaWhatsapp className="text-[36px] max-sm:text-[31px] max-mobile:text-[25px] mr-5" />
 								</Link>
 								<Link
 									href={PHONE_URL}
 									target="_blank"
 									className="hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 								>
-									<FaPhone className="text-[33px] max-sm:text-[30px] max-mobile:text-[25px]" />
+									<FaPhone className="text-[33px] max-sm:text-[29px] max-mobile:text-[25px]" />
 								</Link>
 							</div>
 							<PhoneNumber />
@@ -97,20 +97,20 @@ export default function Home() {
 						>
 							<XIcon
 								size="text-[45px]"
-								style="max-sm:text-[30px] max-mobile:text-[25px] hover:text-cyan-300"
+								style="max-sm:text-[34px] max-mobile:text-[32px] hover:text-cyan-300"
 							/>
 						</Link>
 						<Link
 							href={INSTAGRAM_URL}
 							target="_blank"
 						>
-							<SiInstagram className="text-[35px] max-sm:text-[30px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
+							<SiInstagram className="text-[35px] max-sm:text-[28px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
 						</Link>
 						<Link
 							href={FACEBOOK_URL}
 							target="_blank"
 						>
-							<SiFacebook className="text-[35px] max-sm:text-[30px] max-mobile:text-[25px] mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
+							<SiFacebook className="text-[35px] max-sm:text-[30px] max-mobile:text-[27px] mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
 						</Link>
 					</div>
 				</div>
