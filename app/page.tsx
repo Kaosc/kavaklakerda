@@ -22,18 +22,18 @@ export default function Home() {
 
 				<div className="absolute top-0 left-0 right-0 h-screen bg-gradient-to-b from-[#00000000] to-[#053057]"></div>
 
-				<div className="absolute top-20 left-0 right-0 flex flex-col justify-center items-center">
+				<div className="absolute top-20 bottom-0 left-0 right-0 flex flex-col justify-center items-center">
 					{/* TITLE */}
-					<h1 className="max-sm:text-3xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
+					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl mt-10 text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
 					</h1>
-					<h3 className="max-sm:text-xl mt-5 text-4xl text-center font-black tracking-widest">
+					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest">
 						BALIK ŞARKÜTERİ
 					</h3>
 
 					{/* LOGO */}
 					<Image
-						className="mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200"
+						className="max-mobile:h-36 mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200"
 						src="/assets/logo.png"
 						alt="logo"
 						width={150}
@@ -42,7 +42,7 @@ export default function Home() {
 
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5">
-						<p className="text-3xl max-sm:text-2xl text-center mt-10 px-5 font-semibold">
+						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
 							Şehir içi & Şehirler arası kargo bilgi ve sipariş için
 						</p>
 						<Link
@@ -51,22 +51,21 @@ export default function Home() {
 							className="mt-5 flex max-sm:flex-col-reverse items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 						>
 							<div className="max-sm:mt-5">
-								<FaPhone size={35} />
+								<FaPhone className="text-4xl max-sm:text-2xl" />
 							</div>
-							<p className="text-3xl max-sm:text-2xl max:sm:mb-5 text-center ml-4 px-3">+90 553 494 50 99</p>
+							<p className="text-3xl max-mobile:text-base max-sm:text-2xl max:sm:mb-5 text-center ml-4 px-3">+90 553 494 50 99</p>
 						</Link>
 					</div>
 
 					{/* SOCIAL MEDIA */}
-					<h2 className="text-3xl max-sm:text-2xl text-center mt-20 px-5">Sosyal medya hesaplarımız</h2>
+					<h2 className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-20 px-5">Sosyal medya hesaplarımız</h2>
 					<div className="flex flex-row justify-center items-center">
 						<Link
 							href="https://www.instagram.com/kavaklakerda"
 							target="_blank"
 						>
 							<SiInstagram
-								className="mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
-								size={50}
+								className="text-4xl max-sm:text-2xl mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
 							/>
 						</Link>
 						<Link
@@ -74,8 +73,7 @@ export default function Home() {
 							target="_blank"
 						>
 							<SiFacebook
-								className="mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
-								size={50}
+								className="text-4xl max-sm:text-2xl mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
 							/>
 						</Link>
 					</div>
