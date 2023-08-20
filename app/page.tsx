@@ -40,11 +40,11 @@ export default function Home() {
 					typeof="video/mp4"
 				></video>
 
-				<div className="absolute top-0 left-0 right-0 h-screen bg-gradient-to-b from-[#00000000] to-[#053057]"></div>
+				<div className="absolute top-0 left-0 right-0 min-h-screen bg-gradient-to-b from-[#00000000] to-[#053057]"></div>
 
-				<div className="absolute top-20 bottom-0 left-0 right-0 flex flex-col justify-center items-center">
+				<div className="absolute min-h-screen top-20 bottom-0 left-0 right-0 flex flex-col justify-start items-center">
 					{/* TITLE */}
-					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest">
+					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest mt-2">
 						KAVAKLAKERDA
 					</h1>
 					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest">
@@ -65,7 +65,7 @@ export default function Home() {
 
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5">
-						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
+						<p className="text-3xl max-mobile:text-base max-sm:text-xl text-center mt-10 px-5 font-semibold">
 							Şehir İçi & Şerhirler Arası Kargo İle Kapınıza Teslim
 						</p>
 						<div className="mt-5 flex max-sm:flex-col-reverse items-center">
@@ -123,9 +123,8 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="w-full mt-[-7vh] pt-[7vh] bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className="w-full min-h-screen  mt-[-7vh] pt-[7vh] bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
-
 				<Gallery
 					justify="justify-around"
 					images={galleryImages}

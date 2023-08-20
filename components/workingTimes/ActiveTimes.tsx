@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState} from "react"
+import { useEffect, useMemo, useState } from "react"
 
 import { CLOSE_HOURS, OPEN_HOURS } from "@/utils/constants"
 import { AiOutlineClockCircle } from "react-icons/ai"
@@ -17,9 +17,7 @@ const Timer = dynamic(() => import("@/components/workingTimes/Timer"), { ssr: fa
 export default function ActiveTimes() {
 	const [date, setCurrentDate] = useState(new Date())
 
-	const [hour, min, sec] = useMemo(() => {
-		return [date.getHours(), date.getMinutes(), date.getSeconds()]
-	}, [date])
+	const [hour, min, sec] = useMemo(() => [date.getHours(), date.getMinutes(), date.getSeconds()], [date])
 
 	const defaultTimerState = useMemo(() => {
 		return {
@@ -95,7 +93,10 @@ export default function ActiveTimes() {
 				</div>
 
 				{/* TIMER */}
-				<Timer timer={timer} isOpen={isOpen} />
+				<Timer
+					timer={timer}
+					isOpen={isOpen}
+				/>
 			</div>
 		</div>
 	)
