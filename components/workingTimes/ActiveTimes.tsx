@@ -6,7 +6,7 @@ import { CLOSE_HOURS, OPEN_HOURS } from "@/utils/constants"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import dynamic from "next/dynamic"
 
-const Timer = dynamic(() => import("@/components/workingTimes/Timer"), { ssr: false })
+const ActiveStatus = dynamic(() => import("@/components/workingTimes/ActiveStatus"), { ssr: false })
 
 /*
   09:00 - 21:00 (opens every day)
@@ -16,7 +16,6 @@ const Timer = dynamic(() => import("@/components/workingTimes/Timer"), { ssr: fa
 
 export default function ActiveTimes() {
 	const [date, setCurrentDate] = useState(new Date())
-
 	const [hour, min, sec] = useMemo(() => [date.getHours(), date.getMinutes(), date.getSeconds()], [date])
 
 	const defaultTimerState = useMemo(() => {
@@ -73,31 +72,21 @@ export default function ActiveTimes() {
 
 	return (
 		<div className="w-full max-sm:text-2xl max-mobile:text-xl shadow-3xl shadow-black mt-5 text-3xl text-center">
-			{/* OPEN OR CLOSE */}
-			<div className="flex flex-col justify-center items-center">
-				<div
-					className={`flex flex-col justify-center items-center py-2 px-3 rounded-xl ${
-						isOpen ? "bg-[#4a48c4]" : "bg-red-500"
-					}`}
-				>
-					<p className="text-2xl font-bold animate-pulse">{isOpen ? "AÇIK" : "KAPALI"}</p>
-				</div>
-			</div>
 
+			{/* WORKING HOURS */}
 			<div className={`flex flex-col justify-center items-center mt-5`}>
-				{/* WORKING HOURS */}
 				<div className="flex flex-row justify-center items-center">
 					<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
 					<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
 					<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
 				</div>
-
-				{/* TIMER */}
-				<Timer
-					timer={timer}
-					isOpen={isOpen}
-				/>
 			</div>
+			
+			{/* TIMER & STATUS */}
+			<ActiveStatus
+				timer={timer}
+				isOpen={isOpen}
+			/>
 		</div>
 	)
 }

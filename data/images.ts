@@ -1,7 +1,8 @@
 export const galleryImages = [
-	{ src: "https://www.instagram.com/p/CimbWlbLnHd/" },
-	{ src: "https://www.instagram.com/p/Cimdk7mLdD1/" },
-	{ src: "https://www.instagram.com/p/CimbjpsLZKS/" },
+	{ src: "https://www.instagram.com/p/CimbWlbLnHd/", w: 470, h: 400  },
+	{ src: "https://www.instagram.com/p/CrXq00LsC47/", w: 768, h: 470 },
+	{ src: "https://www.instagram.com/p/CimbjpsLZKS/", w: 470, h: 400 },
+	// { src: "https://www.instagram.com/p/Cimdk7mLdD1/" },
 	// { src: "https://www.instagram.com/p/Cg6-fTJsGxw/" },
 	// { src: "https://www.instagram.com/p/CGXYCBxAT1i/" },
 	// { src: "https://www.instagram.com/p/CimeJx_rUOQ/" },

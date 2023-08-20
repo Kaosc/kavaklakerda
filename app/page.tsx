@@ -121,13 +121,13 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className=" relative w-full min-h-screen py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className="flex flex-col relative min-h-screen w-full justify-center items-center  py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 				<Gallery
 					justify="justify-around"
 					images={galleryImages}
-					w={"w-[570px]"}
-					h={"h-[350px]"}
+					w={"max-w-[1000px]"}
+					h={"max-h-[1000px]"}
 					mx={"mx-5"}
 					my={"my-5"}
 				/>
