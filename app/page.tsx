@@ -28,11 +28,11 @@ export default function Home() {
 				<FloatActionsButton />
 			</div>
 
-			<section className="w-full min-h-screen items-center justify-center">
+			<section className="w-full h-screen items-center justify-center mt-[-7vh]">
 				{/* VIDEO BACKGROUND */}
 				<video
 					id="home"
-					className="w-full h-screen object-cover mt-[-7vh]"
+					className="absolute w-full h-full object-cover"
 					autoPlay
 					loop
 					muted
@@ -40,11 +40,9 @@ export default function Home() {
 					typeof="video/mp4"
 				></video>
 
-				<div className="absolute top-0 left-0 right-0 min-h-screen bg-gradient-to-b from-[#00000000] to-[#053057]"></div>
-
-				<div className="absolute min-h-screen top-20 bottom-0 left-0 right-0 flex flex-col justify-start items-center">
+				<div className="relative h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057]">
 					{/* TITLE */}
-					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest mt-2">
+					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
 					</h1>
 					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest">
@@ -65,7 +63,7 @@ export default function Home() {
 
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5">
-						<p className="text-3xl max-mobile:text-base max-sm:text-xl text-center mt-10 px-5 font-semibold">
+						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
 							Şehir İçi & Şerhirler Arası Kargo İle Kapınıza Teslim
 						</p>
 						<div className="mt-5 flex max-sm:flex-col-reverse items-center">
@@ -123,7 +121,7 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="w-full min-h-screen  mt-[-7vh] pt-[7vh] bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className=" relative w-full min-h-screen py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 				<Gallery
 					justify="justify-around"
@@ -139,7 +137,7 @@ export default function Home() {
 
 			<section
 				id="products"
-				className="w-full bg-gradient-to-b from-[#2b5b88] to-[#1b3a57] pt-20"
+				className="w-full bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
 			>
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
@@ -154,7 +152,7 @@ export default function Home() {
 
 			{/* PRODUCTS 2 */}
 
-			<section className="w-full bg-gradient-to-b from-[#1b3a57] to-[#021a30] pb-10 pt-20">
+			<section className="w-full py-20 bg-gradient-to-b from-[#1b3a57] to-[#021a30]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"
@@ -169,7 +167,7 @@ export default function Home() {
 			{/* WHERE */}
 			<section
 				id="where"
-				className="w-full min-h-screen pt-20 bg-gradient-to-b from-[#021a30] to-[#011425]"
+				className="w-full min-h-screen py-20 bg-gradient-to-b from-[#021a30] to-[#011425]"
 			>
 				<div className="flex flex-col items-center justify-centers m-auto">
 					{/* TITLE */}
