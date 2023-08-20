@@ -1,0 +1,7 @@
+export const FACEBOOK_URL = "https://www.facebook.com/kavaklakerda"
+export const INSTAGRAM_URL = "https://www.instagram.com/kavaklakerda"
+export const X_URL = "https://x.com/kavaklakerda"
+export const PHONE_URL = "tel:+905534945099"
+export const WHATSAPP_URL = "https://wa.me/905534945099"
+export const PHONE_NUMBER = "+90 553 494 50 99"
+export const BACKGROUND_VIDEO_URL = "https://i.imgur.com/5AOm4WR.mp4"

@@ -24,33 +24,41 @@ export const productImages_2 = [
 	{
 		src: "https://www.instagram.com/p/CtIzDpNsIpK/",
 		title: "İskorpit Çorbası",
+		stock: true,
 	},
 	{
 		src: "https://www.instagram.com/p/Cr5D4yqsL1R/",
 		title: "Palçovi",
+		stock: true,
 	},
 	{
 		src: "https://www.instagram.com/p/CrFoDlZshIF/",
 		title: "Palamut",
+		stock: true,
 	},
 	{
 		src: "https://www.instagram.com/p/CrFn-AlsGSQ/",
 		title: "Akya",
+		stock: true,
 	},
 	{
 		src: "https://www.instagram.com/p/CrFnx_MMMcP/",
 		title: "Tirsi",
+		stock: true,
 	},
 	{
 		src: "https://www.instagram.com/p/CrFnO1gMUjh/",
 		title: "Bottarga Rende",
+		stock: true,
 	},
 	{
 		src: "https://www.instagram.com/p/Cimdz0hrvI5/",
 		title: "Torik Füme Lokma",
+		stock: false,
 	},
 	{
 		src: "https://www.instagram.com/p/ChkPIfaLSLK/",
 		title: "Kefal Yumurtası",
+		stock: false,
 	},
 ]

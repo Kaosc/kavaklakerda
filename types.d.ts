@@ -1,4 +1,5 @@
 type GImage = {
-   src: string;
-   title?: string;
-} 
+	src: string
+	title?: string
+	stock?: boolean
+}

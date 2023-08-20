@@ -1,13 +1,33 @@
-import Gallery from "@/components/Gallery"
 import Image from "next/image"
-import { FaPhone } from "react-icons/fa"
-import { SiInstagram, SiFacebook } from "react-icons/si"
-import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
 import Link from "next/link"
+import { FaPhone, FaWhatsapp } from "react-icons/fa"
+import { SiInstagram, SiFacebook } from "react-icons/si"
+import { Tooltip } from "@nextui-org/tooltip"
+
+import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
+
+import FloatActionsButton from "@/components/FloatActionsButton"
+import Gallery from "@/components/Gallery"
+import {
+	BACKGROUND_VIDEO_URL,
+	FACEBOOK_URL,
+	INSTAGRAM_URL,
+	PHONE_NUMBER,
+	PHONE_URL,
+	WHATSAPP_URL,
+	X_URL,
+} from "@/utils/constants"
+import XIcon from "@/components/XIcon"
+import PhoneNumber from "@/components/PhoneNumber"
 
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
+			{/* FLOAT ACTIONS BUTTON */}
+			<div className="fixed bottom-2 right-2 z-50">
+				<FloatActionsButton />
+			</div>
+
 			<section className="w-full min-h-screen items-center justify-center">
 				{/* VIDEO BACKGROUND */}
 				<video
@@ -16,7 +36,7 @@ export default function Home() {
 					autoPlay
 					loop
 					muted
-					src="https://i.imgur.com/5AOm4WR.mp4"
+					src={BACKGROUND_VIDEO_URL}
 					typeof="video/mp4"
 				></video>
 
@@ -43,38 +63,54 @@ export default function Home() {
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5">
 						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
-							Şehir içi & Şehirler arası kargo bilgi ve sipariş için
+							Şehir İçi & Şerhirler Arası Kargo İle Kapınıza Teslim
 						</p>
-						<Link
-							href="tel:+905534945099"
-							target="_blank"
-							className="mt-5 flex max-sm:flex-col-reverse items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
-						>
-							<div className="max-sm:mt-5">
-								<FaPhone className="text-4xl max-sm:text-2xl" />
+						<div className="mt-5 flex max-sm:flex-col-reverse items-center">
+							<div className="max-sm:mt-5 flex">
+								<Link
+									href={WHATSAPP_URL}
+									target="_blank"
+									className="hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
+								>
+									<FaWhatsapp className="text-[36px] max-sm:text-[30px] max-mobile:text-[25px] mr-5" />
+								</Link>
+								<Link
+									href={PHONE_URL}
+									target="_blank"
+									className="hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
+								>
+									<FaPhone className="text-[33px] max-sm:text-[30px] max-mobile:text-[25px]" />
+								</Link>
 							</div>
-							<p className="text-3xl max-mobile:text-base max-sm:text-2xl max:sm:mb-5 text-center ml-4 px-3">+90 553 494 50 99</p>
-						</Link>
+							<PhoneNumber />
+						</div>
 					</div>
 
 					{/* SOCIAL MEDIA */}
-					<h2 className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-20 px-5">Sosyal medya hesaplarımız</h2>
+					<h2 className="text-3xl font-semibold max-mobile:text-base max-sm:text-2xl text-center mt-20 px-5">
+						Sosyal Medya Hesaplarımız
+					</h2>
 					<div className="flex flex-row justify-center items-center">
 						<Link
-							href="https://www.instagram.com/kavaklakerda"
+							href={X_URL}
 							target="_blank"
 						>
-							<SiInstagram
-								className="text-4xl max-sm:text-2xl mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
+							<XIcon
+								size="text-[45px]"
+								style="max-sm:text-[30px] max-mobile:text-[25px] hover:text-cyan-300"
 							/>
 						</Link>
 						<Link
-							href="https://www.facebook.com/kavaklakerda"
+							href={INSTAGRAM_URL}
 							target="_blank"
 						>
-							<SiFacebook
-								className="text-4xl max-sm:text-2xl mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300"
-							/>
+							<SiInstagram className="text-[35px] max-sm:text-[30px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
+						</Link>
+						<Link
+							href={FACEBOOK_URL}
+							target="_blank"
+						>
+							<SiFacebook className="text-[35px] max-sm:text-[30px] max-mobile:text-[25px] mt-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
 						</Link>
 					</div>
 				</div>
@@ -82,7 +118,7 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="w-full mt-[-7vh] bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className="w-full mt-[-7vh] pt-[7vh] bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 
 				<Gallery
@@ -139,17 +175,19 @@ export default function Home() {
 					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">
 						Rumeli Kavağı Mah. Liman Cad. No:38/A
 					</h2>
-					<h2 className="text-3xl max-sm:text-2xl text-center">34450 Sarıyer/İstanbul</h2>
+					<h2 className="text-3xl max-sm:text-2xl text-center leading-[50px]">34450 Sarıyer / İstanbul</h2>
 
 					{/* PHONE */}
-					<Link
-						href="tel:+905534945099"
-						target="_blank"
-						className="mt-10 flex items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
-					>
-						<FaPhone size={29} />
-						<p className="text-3xl max-sm:text-2xl text-center ml-4">+90 553 494 50 99</p>
-					</Link>
+					<div className="flex flex-row items-center justify-center mt-10">
+						<Link
+							href={PHONE_URL}
+							target="_blank"
+							className="items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
+						>
+							<FaPhone size={29} />
+						</Link>
+						<PhoneNumber />
+					</div>
 
 					{/* MAP */}
 					<iframe

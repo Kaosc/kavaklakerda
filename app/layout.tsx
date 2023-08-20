@@ -1,9 +1,11 @@
-import Navbar from "@/components/navbar/Navbar"
 import "./globals.css"
 import { Inter } from "next/font/google"
-
 const inter = Inter({ subsets: ["latin"] })
+
+import { Providers } from "./providers"
+
 import NavbarMargin from "@/components/navbar/NavbarMargin"
+import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
 
 export const metadata = {
@@ -13,7 +15,10 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html
+			lang="en"
+			className="dark"
+		>
 			<meta
 				name="google-site-verification"
 				content="oZV9oMz8xInRmpVZ3SKxdxLhRQ26GGqaL0dR6uhrrL8"
@@ -47,10 +52,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				content="#000000"
 			/>
 			<body className={inter.className}>
-				<NavbarMargin />
-				<Navbar />
-				{children}
-				<Footer />
+				<Providers>
+					<NavbarMargin />
+					<Navbar />
+					{children}
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	)

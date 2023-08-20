@@ -54,7 +54,10 @@ export default function Gallery({
 								" hover:saturate-150 brightness-105 hover:scale-105 ease-in-out transition-all duration-200"
 							}
 						>
+							{/* TITLE */}
 							{img?.title && <h2 className="w-full text-white text-2xl font-bold p-2">{img.title}</h2>}
+
+							{/* IMAGE */}
 							<div
 								onClick={() => {
 									setPreviewVisible(true)
@@ -69,6 +72,19 @@ export default function Gallery({
 									fill
 									className="object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
 								/>
+
+								{/* STOCK  */}
+								{img?.stock !== undefined && (
+									<div
+										className={`absolute bottom-0 left-0 rounded-bl-3xl rounded-tr-2xl ${
+											img.stock ? "bg-[#149c4b]" : "bg-[#c53535]"
+										}`}
+									>
+										<h2 className={`font-bold text-black text-base p-[10px] tracking-wider animate-pulse`}>
+											{img.stock ? "STOKTA VAR" : "STOKTA YOK"}
+										</h2>
+									</div>
+								)}
 							</div>
 						</div>
 					)
