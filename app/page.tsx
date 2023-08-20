@@ -165,7 +165,7 @@ export default function Home() {
 			{/* WHERE */}
 			<section
 				id="where"
-				className="w-full h-screen pt-20 bg-gradient-to-b from-[#021a30] to-[#011425]"
+				className="w-full min-h-screen pt-20 bg-gradient-to-b from-[#021a30] to-[#011425]"
 			>
 				<div className="flex flex-col items-center justify-centers m-auto">
 					{/* TITLE */}
