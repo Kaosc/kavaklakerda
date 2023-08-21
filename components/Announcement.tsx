@@ -7,6 +7,7 @@ import { IoMdCloseCircleOutline } from "react-icons/io"
 
 export default function Announcement() {
 	const [show, setShow] = useState("flex")
+	const lang = global.navigator.language
 
 	return (
 		<div className={`${show} flex-row items-center justify-center bg-[#4d61d3] p-1`}>
@@ -16,7 +17,7 @@ export default function Announcement() {
 				className="mr-3"
 			/>
 			<h1 className="text-center text-sm max-sm:text-xs max-sm:w-2/3">
-				{global.navigator.language === "tr"
+				{lang === "tr"
 					? "Bu web sitesindeki bilgiler doğru olmayabilir. Daha fazla bilgi için lütfen mağaza sahibiyle iletişime geçin."
 					: "Informations in this website are may or may not be accurate. Please contact to the owner of the shop for more information"}
 			</h1>
