@@ -16,7 +16,7 @@ export default function Announcement() {
 				className="mr-3"
 			/>
 			<h1 className="text-center text-sm max-sm:text-xs max-sm:w-2/3">
-				{navigator.language === "tr"
+				{global.navigator.language === "tr"
 					? "Bu web sitesindeki bilgiler doğru olmayabilir. Daha fazla bilgi için lütfen mağaza sahibiyle iletişime geçin."
 					: "Informations in this website are may or may not be accurate. Please contact to the owner of the shop for more information"}
 			</h1>
