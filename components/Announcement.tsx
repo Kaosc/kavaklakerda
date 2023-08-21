@@ -10,7 +10,7 @@ export default function Announcement() {
 	const [message, setMessage] = useState("")
 
 	useEffect(() => {
-		if (localStorage.getItem("lang") === "tr") {
+		if (navigator.language === "tr") {
 			setMessage(
 				"Bu web sitesindeki bilgiler doğru olmayabilir. Daha fazla bilgi için lütfen mağaza sahibiyle iletişime geçin."
 			)
