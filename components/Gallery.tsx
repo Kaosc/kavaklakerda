@@ -72,7 +72,7 @@ export default function Gallery({
 										src={img.src + "media?size=l"}
 										width={img.w}
 										height={img.h}
-										className="object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
+										className="shadow-[#000000af] object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
 									/>
 								) : (
 									<Image

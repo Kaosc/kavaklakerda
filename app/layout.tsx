@@ -7,6 +7,7 @@ import { Providers } from "./providers"
 import NavbarMargin from "@/components/navbar/NavbarMargin"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
+import Announcement from "@/components/Announcement"
 
 export const metadata = {
 	title: "Kavaklakerda | Balık Şarküteri",
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			/>
 			<body className={inter.className}>
 				<Providers>
+					<Announcement/>
 					<NavbarMargin />
 					<Navbar />
 					{children}
