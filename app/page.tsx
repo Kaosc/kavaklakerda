@@ -28,7 +28,7 @@ export default function Home() {
 				<FloatActionsButton />
 			</div>
 
-			<section className="w-full h-screen items-center justify-center mt-[-7vh]">
+			<section className="w-full min-h-screen items-center justify-center mt-[-7vh]">
 				{/* VIDEO BACKGROUND */}
 				<video
 					id="home"
@@ -40,7 +40,7 @@ export default function Home() {
 					typeof="video/mp4"
 				></video>
 
-				<div className="relative h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057]">
+				<div className="relative min-h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057]">
 					{/* TITLE */}
 					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest">
 						KAVAKLAKERDA
@@ -121,7 +121,7 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="flex flex-col relative min-h-screen w-full justify-center items-center  py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className="flex flex-col min-h-screen w-full justify-center items-center  py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 				<Gallery
 					justify="justify-around"
@@ -137,7 +137,7 @@ export default function Home() {
 
 			<section
 				id="products"
-				className="w-full bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
+				className="w-full  bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
 			>
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery

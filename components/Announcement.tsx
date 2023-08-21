@@ -6,8 +6,13 @@ import { FiAlertTriangle } from "react-icons/fi"
 import { IoMdCloseCircleOutline } from "react-icons/io"
 
 export default function Announcement() {
-	const [show, setShow] = useState("flex")
+	const [show, setShow] = useState(localStorage.getItem("NoAnnouncement") ? "hidden" : "flex")
 	const [message, setMessage] = useState("")
+
+	const handleClose = () => {
+		setShow("hidden")
+		localStorage.setItem("NoAnnouncement", "true")
+	}
 
 	useEffect(() => {
 		// do not touch it. navigator language is not working on server side
@@ -31,7 +36,7 @@ export default function Announcement() {
 			/>
 			<h1 className="text-center text-sm max-sm:text-xs max-sm:w-2/3">{message}</h1>
 			<button
-				onClick={() => setShow("hidden")}
+				onClick={handleClose}
 				className="flex ml-3 hover:text-red-500 transition-all duration-200 ease-in-out"
 			>
 				<IoMdCloseCircleOutline size={25} />
