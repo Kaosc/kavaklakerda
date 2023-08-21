@@ -64,7 +64,7 @@ export default function Home() {
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5">
 						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
-							Şehir İçi & Şerhirler Arası Kargo İle Kapınıza Teslim
+							Şehir İçi & Şehirler Arası Kargo İle Kapınıza Teslim
 						</p>
 						<div className="mt-5 flex max-sm:flex-col-reverse items-center">
 							<div className="max-sm:mt-5 flex">
