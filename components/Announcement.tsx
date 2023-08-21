@@ -9,7 +9,7 @@ export default function Announcement() {
 	const [show, setShow] = useState("flex")
 
 	return (
-		<div className={`${show} flex-row items-center justify-center bg-[#4d61d3] p-1 `}>
+		<div className={`${show} flex-row items-center justify-center bg-[#4d61d3] p-1`}>
 			<FiAlertTriangle
 				size={22}
 				color="#ee2c2c"
