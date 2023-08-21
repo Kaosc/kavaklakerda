@@ -6,7 +6,7 @@ import { FiAlertTriangle } from "react-icons/fi"
 import { IoMdCloseCircleOutline } from "react-icons/io"
 
 export default function Announcement() {
-	const [show, setShow] = useState(localStorage.getItem("NoAnnouncement") ? "hidden" : "flex")
+	const [show, setShow] = useState("hidden")
 	const [message, setMessage] = useState("")
 
 	const handleClose = () => {
@@ -15,6 +15,7 @@ export default function Announcement() {
 	}
 
 	useEffect(() => {
+		localStorage.getItem("NoAnnouncement") ? setShow("hidden") : setShow("flex")
 		// do not touch it. navigator language is not working on server side
 		if (navigator.language === "tr") {
 			setMessage(
