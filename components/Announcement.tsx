@@ -10,6 +10,7 @@ export default function Announcement() {
 	const [message, setMessage] = useState("")
 
 	useEffect(() => {
+		// do not touch it. navigator language is not working on server side
 		if (navigator.language === "tr") {
 			setMessage(
 				"Bu web sitesindeki bilgiler doğru olmayabilir. Daha fazla bilgi için lütfen mağaza sahibiyle iletişime geçin."
