@@ -6,5 +6,5 @@ export const WHATSAPP_URL = "https://wa.me/905534945099"
 export const PHONE_NUMBER = "+90 553 494 50 99"
 export const BACKGROUND_VIDEO_URL = "https://i.imgur.com/5AOm4WR.mp4"
 export const MAP_URL = "https://goo.gl/maps/utFuqqWRKaudJnxa6"
-export const OPEN_HOURS = 9
-export const CLOSE_HOURS = 21
+export const OPENING_HOURS = 9
+export const CLOSING_HOURS = 21

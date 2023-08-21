@@ -2,35 +2,40 @@
 
 import { useEffect, useMemo, useState } from "react"
 
-import { CLOSE_HOURS, OPEN_HOURS } from "@/utils/constants"
+import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import dynamic from "next/dynamic"
 
 const ActiveStatus = dynamic(() => import("@/components/workingTimes/ActiveStatus"), { ssr: false })
-
-/*
-  09:00 - 21:00 (opens every day)
-  open now - close in hh:mm:ss
-  close now - open in hh:mm:ss
-*/
 
 export default function ActiveTimes() {
 	const [date, setCurrentDate] = useState(new Date())
 	const [hour, min, sec] = useMemo(() => [date.getHours(), date.getMinutes(), date.getSeconds()], [date])
 
 	const defaultTimerState = useMemo(() => {
-		return {
-			hours:
-				hour === CLOSE_HOURS
-					? 11
-					: hour === 0
-					? 9
-					: hour > CLOSE_HOURS
-					? 24 - hour + OPEN_HOURS
-					: CLOSE_HOURS - hour,
-			min: min === 0 ? 59 : min === 59 ? 0 : 59 - min,
-			sec: sec === 0 ? 59 : sec === 59 ? 0 : 59 - sec,
+		let res = { hours: 0, min: 0, sec: 0 }
+
+		/*
+		09:00 - 21:00 (opens every day)
+		open now - close in hh:mm:ss
+		close now - open in hh:mm:ss
+		*/
+
+		if (hour >= OPENING_HOURS && hour < CLOSING_HOURS) {
+			res.hours = CLOSING_HOURS - hour - 1
+			res.min = 60 - min - 1
+			res.sec = 60 - sec
+		} else if (hour < OPENING_HOURS) {
+			res.hours = OPENING_HOURS - hour - 1
+			res.min = 60 - min - 1
+			res.sec = 60 - sec
+		} else if (hour >= CLOSING_HOURS) {
+			res.hours = 24 - hour + OPENING_HOURS - 1
+			res.min = 60 - min - 1
+			res.sec = 60 - sec
 		}
+
+		return res
 	}, [hour, min, sec])
 
 	const [timer, setTimer] = useState(defaultTimerState)
