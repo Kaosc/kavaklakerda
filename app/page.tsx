@@ -50,7 +50,7 @@ export default function Home() {
 					</h3>
 
 					{/* LOGO */}
-					<Logo/>
+					<Logo />
 
 					{/* WORKING HOURS */}
 					<ActiveTimes />
