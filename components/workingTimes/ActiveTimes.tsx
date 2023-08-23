@@ -1,10 +1,11 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState, useContext } from "react"
 
 import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import dynamic from "next/dynamic"
+import { IsOpenContext } from "@/utils/contexts"
 
 const ActiveStatus = dynamic(() => import("@/components/workingTimes/ActiveStatus"), { ssr: false })
 
@@ -16,9 +17,9 @@ export default function ActiveTimes() {
 		let res = { hours: 0, min: 0, sec: 0 }
 
 		/*
-		09:00 - 21:00 (opens every day)
-		open now - close in hh:mm:ss
-		close now - open in hh:mm:ss
+			09:00 - 21:00 (opens every day)
+			open now - close in hh:mm:ss
+			close now - open in hh:mm:ss
 		*/
 
 		if (hour >= OPENING_HOURS && hour < CLOSING_HOURS) {
@@ -39,16 +40,30 @@ export default function ActiveTimes() {
 	}, [hour, min, sec])
 
 	const [timer, setTimer] = useState(defaultTimerState)
-	const [isOpen, setIsOpen] = useState(hour >= 9 && hour < 21 ? true : false)
+	const { isOpen, setIsOpen } = useContext<IsOpenContext>(IsOpenContext)
+
+	// Set isOpen state via current time
+	useEffect(() => {
+		if (hour >= 9 && hour < 21) {
+			setIsOpen(true)
+		} else {
+			setIsOpen(false)
+		}
+	}, [hour, setIsOpen])
+
+	// Save isOpen state to localStorage
+	useEffect(() => {
+		localStorage.setItem("isOpen", JSON.stringify(isOpen))
+	}, [isOpen])
 
 	// Reset timer when time is up & change isOpen state
 	useEffect(() => {
 		if (timer.hours === 0 && timer.min === 0 && timer.sec === 0) {
-			setIsOpen((prev) => !prev)
+			setIsOpen((prev: boolean) => !prev)
 			setTimer(defaultTimerState)
 			setCurrentDate(new Date())
 		}
-	}, [timer, defaultTimerState])
+	}, [timer, defaultTimerState, setIsOpen])
 
 	useEffect(() => {
 		const interval = setInterval(() => {

@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 
 import { FaPhone, FaWhatsapp } from "react-icons/fa"
@@ -19,6 +18,7 @@ import {
 import XIcon from "@/components/XIcon"
 import PhoneNumber from "@/components/PhoneNumber"
 import ActiveTimes from "@/components/workingTimes/ActiveTimes"
+import Logo from "@/components/Logo"
 
 export default function Home() {
 	return (
@@ -50,15 +50,9 @@ export default function Home() {
 					</h3>
 
 					{/* LOGO */}
-					<Image
-						className="max-mobile:h-36 mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200"
-						src="/assets/logo.png"
-						alt="logo"
-						width={150}
-						height={150}
-						priority
-					/>
+					<Logo/>
 
+					{/* WORKING HOURS */}
 					<ActiveTimes />
 
 					{/* SHIPPING */}
