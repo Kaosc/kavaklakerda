@@ -10,7 +10,7 @@ export default function Footer() {
 	const year = new Date().getFullYear()
 
 	return (
-		<div className="flex w-full pt-20 pb-20 text-center items-center tracking-wider p-4 justify-center bg-gradient-to-b from-[#011425] to-[#010a13]">
+		<div className="flex w-full h-[300px] text-center items-center tracking-wider p-4 justify-center bg-gradient-to-b from-[#0A1726] to-[#010a13]">
 			<div>
 				<h4
 					style={{

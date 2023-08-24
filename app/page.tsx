@@ -13,6 +13,7 @@ import {
 	INSTAGRAM_URL,
 	PHONE_URL,
 	WHATSAPP_URL,
+	WHERE_BACKGROUND_VIDEO_URL,
 	X_URL,
 } from "@/utils/constants"
 import XIcon from "@/components/XIcon"
@@ -115,7 +116,7 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="flex flex-col min-h-screen w-full justify-center items-center  py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className="flex flex-col min-h-screen w-full justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 				<Gallery
 					justify="justify-around"
@@ -161,9 +162,20 @@ export default function Home() {
 			{/* WHERE */}
 			<section
 				id="where"
-				className="w-full min-h-screen py-20 bg-gradient-to-b from-[#021a30] to-[#011425]"
+				className="w-full min-h-screen"
 			>
-				<div className="flex flex-col items-center justify-centers m-auto">
+				{/* VIDEO BACKGROUND */}
+				<video
+					id="home"
+					className="absolute w-full h-full object-cover brightness-200 grayscale"
+					autoPlay
+					loop
+					muted
+					src={WHERE_BACKGROUND_VIDEO_URL}
+					typeof="video/mp4"
+				></video>
+				
+				<div className="relative min-h-screen flex flex-col items-center justify-center m-auto bg-gradient-to-b from-[#021a30] to-[#011425e5]">
 					{/* TITLE */}
 					<h1 className="text-7xl max-sm:text-6xl text-center font-black tracking-widest">NEREDE</h1>
 
@@ -187,7 +199,7 @@ export default function Home() {
 
 					{/* MAP */}
 					<iframe
-						className="w-2/3 h-[400px] mt-10 border-4 invert hue-rotate-[200deg]"
+						className="w-2/4 h-[400px] mt-10 border-4 invert hue-rotate-[200deg] opacity-50 hover:opacity-100 max-sm:opacity-100 max-sm:w-3/4 hover:scale-110 transition-all duration-300 ease-in-out"
 						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48046.38772473157!2d29.073538!3d41.180365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409fdfd9e82d2cad%3A0x4264152b9c228659!2zS2F2YWsgTGFrZXJkYSBCYWzEsWsgxZ5hcmvDvHRlcmk!5e0!3m2!1str!2str!4v1692214461035!5m2!1str!2str"
 						loading="lazy"
 					></iframe>
