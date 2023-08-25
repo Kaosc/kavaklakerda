@@ -8,6 +8,6 @@ export const BACKGROUND_VIDEO_URL = "https://i.imgur.com/5AOm4WR.mp4"
 export const WHERE_BACKGROUND_VIDEO_URL = "https://i.imgur.com/fOKAxbE.mp4"
 export const MAP_URL = "https://goo.gl/maps/utFuqqWRKaudJnxa6"
 export const EASTER_NIGHT = "https://youtu.be/46qo_V1zcOM?t=11"
-export const EASTER_DAY = "https://youtu.be/pQsF3pzOc54"
+export const EASTER_DAY = "https://youtu.be/FgS1b2nU8AQ?si=g8sEwLpPfq_bVD2s"
 export const OPENING_HOURS = 9
 export const CLOSING_HOURS = 21
