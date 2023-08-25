@@ -162,7 +162,7 @@ export default function Home() {
 			{/* WHERE */}
 			<section
 				id="where"
-				className="w-full min-h-screen"
+				className="relative w-full min-h-screen"
 			>
 				{/* VIDEO BACKGROUND */}
 				<video
