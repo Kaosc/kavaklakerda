@@ -17,7 +17,7 @@ export default function Logo() {
 			target="_blank"
 		>
 			<Image
-				className="max-mobile:h-36 mt-10 animate-pulse hover:scale-110 ease-in-out transition-all duration-200"
+				className="max-mobile:h-36 mt-10 animate-pulse hover:scale-110 transition-all duration-1000 ease-in-out"
 				src="/assets/logo.png"
 				alt="logo"
 				width={150}

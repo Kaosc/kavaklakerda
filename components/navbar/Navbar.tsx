@@ -1,23 +1,16 @@
 "use client"
 
 import { useLayoutEffect, useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
 
 import useScrollDirection from "@/hooks/useScrollDirection"
 
 export default function Navbar() {
-	const scrollDirection = useScrollDirection()
-	const pathname = usePathname()
-
 	const [reachTop, setReachTop] = useState(true)
+	const scrollDirection = useScrollDirection()
 
 	const handlerScroll = () => {
-		if (window.scrollY === 0) {
-			setReachTop(true)
-		} else {
-			setReachTop(false)
-		}
+		if (window.scrollY === 0) setReachTop(true)
+		else setReachTop(false)
 	}
 
 	useLayoutEffect(() => {
@@ -27,6 +20,8 @@ export default function Navbar() {
 			setReachTop(false)
 		}
 	}, [])
+
+	const LinkClass = "text-lg max-lg:text-sm hover:opacity-50 transition-all duration-300 ease-in-out"
 
 	return (
 		<div
@@ -39,19 +34,19 @@ export default function Navbar() {
 			<div className="flex h-screen-10 self-center items-center justify-evenly shadow-xl h-[7vh]">
 				<a
 					href="#products"
-					className="text-lg max-lg:text-sm hover:opacity-50"
+					className={LinkClass}
 				>
 					ÜRÜNLER
 				</a>
 				<a
 					href="#home"
-					className="text-lg max-lg:text-sm hover:opacity-50"
+					className={LinkClass}
 				>
 					ANA SAYFA
 				</a>
 				<a
 					href="#where"
-					className="text-lg max-lg:text-sm hover:opacity-50"
+					className={LinkClass}
 				>
 					NEREDE
 				</a>
