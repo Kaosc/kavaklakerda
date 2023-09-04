@@ -8,6 +8,7 @@ import NavbarMargin from "@/components/navbar/NavbarMargin"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
 import Announcement from "@/components/Announcement"
+import Script from "next/script"
 
 export const metadata = {
 	title: "Kavaklakerda | Balık Şarküteri",
@@ -51,6 +52,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<meta
 				name="theme-color"
 				content="#000000"
+			/>
+			<script
+				async
+				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2104233591204201"
+				crossOrigin="anonymous"
 			/>
 			<body className={inter.className}>
 				<Providers>
