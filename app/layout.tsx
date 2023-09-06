@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			/>
 			<link
 				rel="icon"
-				href="favicon.ico"
+				href="favicon.png"
 			/>
 			<meta
 				name="viewport"
