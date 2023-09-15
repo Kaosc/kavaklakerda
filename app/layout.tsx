@@ -53,11 +53,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				name="theme-color"
 				content="#000000"
 			/>
-			<script
-				async
-				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2104233591204201"
-				crossOrigin="anonymous"
-			/>
 			<body className={inter.className}>
 				<Providers>
 					<Announcement />
