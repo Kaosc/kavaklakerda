@@ -53,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				name="theme-color"
 				content="#000000"
 			/>
+			<meta name="darkreader-lock" />
 			<body className={inter.className}>
 				<Providers>
 					<Announcement />
