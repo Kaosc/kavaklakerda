@@ -12,6 +12,7 @@ export default function Gallery({
 	mx,
 	my,
 	justify,
+	className,
 }: {
 	images: GImage[]
 	w?: string
@@ -19,6 +20,7 @@ export default function Gallery({
 	mx: string
 	my: string
 	justify?: string
+	className?: React.HTMLAttributes<HTMLDivElement>["className"]
 }) {
 	const [previewVisible, setPreviewVisible] = useState(false)
 	const startIndex = useRef(0)
@@ -37,7 +39,7 @@ export default function Gallery({
 					images={images}
 				/>
 			)}
-			<div className={"items-center flex flex-wrap h-full " + justify}>
+			<div className={"items-center flex flex-wrap h-full " + justify + " " + className}>
 				{images.map((img: GImage, index: number) => {
 					return (
 						<div

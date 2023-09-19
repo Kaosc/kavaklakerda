@@ -137,10 +137,11 @@ export default function Home() {
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"
+					className="px-20 max-sm:px-0"
 					images={productImages_1}
 					w={"w-[300px]"}
 					h={"h-[300px]"}
-					mx={"mx-5"}
+					mx={"mx-10"}
 					my={"my-5"}
 				/>
 			</section>
@@ -151,6 +152,7 @@ export default function Home() {
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"
+					className="px-20 max-sm:px-0"
 					images={productImages_2}
 					w={"w-[300px]"}
 					h={"h-[300px]"}
