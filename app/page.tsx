@@ -132,7 +132,7 @@ export default function Home() {
 
 			<section
 				id="products"
-				className="w-full  bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
+				className="w-full min-h-screen bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
 			>
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
@@ -148,7 +148,7 @@ export default function Home() {
 
 			{/* PRODUCTS 2 */}
 
-			<section className="w-full py-20 bg-gradient-to-b from-[#1b3a57] to-[#021a30]">
+			<section className="w-full min-h-screen py-20 bg-gradient-to-b from-[#1b3a57] to-[#021a30]">
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"
