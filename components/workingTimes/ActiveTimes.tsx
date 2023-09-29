@@ -6,13 +6,11 @@ import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import dynamic from "next/dynamic"
 import { IsOpenContext } from "@/utils/contexts"
-import ActivityIndicator from "../ui/indicator/ActivityIndicator"
 
 const ActiveStatus = dynamic(() => import("@/components/workingTimes/ActiveStatus"), { ssr: false })
 
 export default function ActiveTimes() {
 	const [date, setCurrentDate] = useState(new Date())
-	const [isLoading, setIsLoading] = useState(true)
 	const [hour, min, sec] = useMemo(() => [date.getHours(), date.getMinutes(), date.getSeconds()], [date])
 
 	const defaultTimerState = useMemo(() => {
@@ -96,7 +94,6 @@ export default function ActiveTimes() {
 			})
 		}, 1000)
 
-		setIsLoading(false)
 		return () => clearInterval(interval)
 	}, [])
 
@@ -112,16 +109,11 @@ export default function ActiveTimes() {
 			</div>
 
 			{/* TIMER & STATUS */}
-			{isLoading ? (
-				<div className="flex flex-col justify-center items-center mt-5">
-					<ActivityIndicator />
-				</div>
-			) : (
-				<ActiveStatus
-					timer={timer}
-					isOpen={isOpen}
-				/>
-			)}
+
+			<ActiveStatus
+				timer={timer}
+				isOpen={isOpen}
+			/>
 		</div>
 	)
 }
