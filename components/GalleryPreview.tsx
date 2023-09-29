@@ -78,8 +78,15 @@ export default function GalleryPreview({
 		)
 	}
 
+	const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (e.target === e.currentTarget) setPreviewVisible(false)
+	}
+
 	return (
-		<div className="fixed flex top-0 left-0 w-screen h-screen bg-[#000000e1] z-50 items-center justify-center">
+		<div
+			className="fixed flex top-0 left-0 w-screen h-screen bg-[#000000e1] z-20 items-center justify-center"
+			onClick={handleOutsideClick}
+		>
 			<div className="flex w-full h-full m-auto justify-center items-center p-10 max-md:flex-col max-md:p-0">
 				{/* CLOSE BUTTON */}
 				<div className="absolute top-0 right-0 z-30">
