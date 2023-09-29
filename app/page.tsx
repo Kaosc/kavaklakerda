@@ -41,12 +41,12 @@ export default function Home() {
 					typeof="video/mp4"
 				></video>
 
-				<div className="relative min-h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057]">
+				<div className="relative min-h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057] transition-all ease-in-out">
 					{/* TITLE */}
-					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest">
+					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest animate-in slide-in-from-top duration-500">
 						KAVAKLAKERDA
 					</h1>
-					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest">
+					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest animate-in slide-in-from-bottom duration-500">
 						BALIK ŞARKÜTERİ
 					</h3>
 
@@ -57,7 +57,7 @@ export default function Home() {
 					<ActiveTimes />
 
 					{/* SHIPPING */}
-					<div className="flex flex-col items-center justify-center mt-5">
+					<div className="flex flex-col items-center justify-center mt-5 transition-all ease-in-out">
 						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
 							Şehir İçi & Şehirler Arası Kargo İle Kapınıza Teslim
 						</p>
@@ -176,7 +176,7 @@ export default function Home() {
 					src={WHERE_BACKGROUND_VIDEO_URL}
 					typeof="video/mp4"
 				></video>
-				
+
 				<div className="relative min-h-screen flex flex-col items-center justify-center m-auto bg-gradient-to-b from-[#021a30] to-[#011425e5]">
 					{/* TITLE */}
 					<h1 className="text-7xl max-sm:text-6xl text-center font-black tracking-widest">NEREDE</h1>
