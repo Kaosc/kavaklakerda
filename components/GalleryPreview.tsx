@@ -108,6 +108,8 @@ export default function GalleryPreview({
 				<div className="relative h-full w-2/3 m-10 max-md:w-11/12 max-md:bottom-12">
 					<Image
 						alt="gallery"
+						loading="eager"
+						priority
 						src={images[currentImageIndex].src + "media?size=l"}
 						fill
 						className={`object-contain ease-in-out duration-${fade.duration === "0" ? "0" : "300"} opacity-${
