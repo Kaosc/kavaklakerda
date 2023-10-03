@@ -82,7 +82,6 @@ export default function Gallery({
 										alt="gallery"
 										src={img.src + "media?size=l"}
 										fill
-										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 										className="object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
 									/>
 								)}
