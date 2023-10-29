@@ -2,7 +2,12 @@
 const nextConfig = {
 	images: {
 		// unoptimized: true,
-		domains: ["www.instagram.com"],
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "www.instagram.com",
+			},
+		],
 	},
 }
 module.exports = nextConfig

@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npm run dev",
+    "lint": "next lint",
+    "upgradenext": "npm i next@latest react@latest react-dom@latest eslint-config-next@latest"
   },
   "dependencies": {
     "@nextui-org/react": "^2.0.24",
@@ -15,9 +16,9 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
-    "eslint-config-next": "^13.5.1",
+    "eslint-config-next": "^14.0.0",
     "framer-motion": "^10.16.0",
-    "next": "^13.5.1",
+    "next": "^14.0.0",
     "postcss": "8.4.28",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
