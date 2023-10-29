@@ -17,6 +17,7 @@ export default function GalleryPreview({
 }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(startIndex)
 	const [fade, setFade] = useState({ opacity: "0", duration: "0" })
+	const [loading, setLoading] = useState(true)
 
 	const handleChange = useCallback(
 		(direction: string) => {
@@ -58,15 +59,6 @@ export default function GalleryPreview({
 		return () => removeEventListener("keydown", keyDownAction)
 	}, [keyDownAction])
 
-	useEffect(() => {
-		setTimeout(() => {
-			setFade({
-				opacity: "100",
-				duration: "300",
-			})
-		}, 200)
-	}, [currentImageIndex])
-
 	const ChangeImageButton = ({ direction }: { direction: string }) => {
 		return (
 			<button
@@ -82,11 +74,20 @@ export default function GalleryPreview({
 		if (e.target === e.currentTarget) setPreviewVisible(false)
 	}
 
+	const handleOnLoad = () => {
+		setLoading(false)
+		setFade({
+			opacity: "100",
+			duration: "300",
+		})
+	}
+
 	return (
-		<div
-			className="fixed flex top-0 left-0 w-screen h-screen bg-[#000000e1] z-30 items-center justify-center"
-		>
-			<div onClick={handleOutsideClick} className="flex w-full h-full m-auto justify-center items-center p-10 max-md:flex-col max-md:p-0">
+		<div className="fixed flex top-0 left-0 w-screen h-screen bg-[#000000e1] z-30 items-center justify-center">
+			<div
+				onClick={handleOutsideClick}
+				className="flex w-full h-full m-auto justify-center items-center p-10 max-md:flex-col max-md:p-0"
+			>
 				{/* CLOSE BUTTON */}
 				<div className="absolute top-0 right-0 z-30">
 					<button
@@ -102,6 +103,15 @@ export default function GalleryPreview({
 				<div className="max-md:hidden">
 					<ChangeImageButton direction={"prev"} />
 				</div>
+				
+				{/* LOADING INDICATOR */}
+				{loading && (
+					<div className="absolute self-center">
+						<div className="flex items-center justify-center">
+							<div className="w-3 h-12 border-2 border-zinc-300 rounded-full animate-spin delay-300"></div>
+						</div>
+					</div>
+				)}
 
 				{/* IMAGE */}
 				<div className="relative h-full w-2/3 m-10 max-md:w-11/12 max-md:bottom-12">
@@ -109,6 +119,9 @@ export default function GalleryPreview({
 						alt="gallery"
 						src={images[currentImageIndex].src + "media?size=l"}
 						fill
+						priority
+						loading="eager"
+						onLoad={handleOnLoad}
 						className={`object-contain ease-in-out duration-${fade.duration === "0" ? "0" : "300"} opacity-${
 							fade.opacity
 						}`}
