@@ -16,14 +16,24 @@ export default function GalleryPreview({
 	startIndex: number
 }) {
 	const [currentImageIndex, setCurrentImageIndex] = useState(startIndex)
-	const [fade, setFade] = useState({ opacity: "0", duration: "0" })
-	const [loading, setLoading] = useState(true)
+	const [imageFade, setImageFade] = useState({
+		opacity: "opacity-0",
+		duration: "duration-0",
+	})
+	const [loadingFade, setLoadingFade] = useState({
+		opacity: "opacity-0",
+		duration: "duration-0",
+	})
 
 	const handleChange = useCallback(
 		(direction: string) => {
-			setFade({
-				opacity: "0",
-				duration: "0",
+			setLoadingFade({
+				opacity: "opacity-100",
+				duration: "duration-500",
+			})
+			setImageFade({
+				opacity: "opacity-0",
+				duration: "duration-0",
 			})
 
 			if (direction === "next") {
@@ -73,12 +83,14 @@ export default function GalleryPreview({
 	const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (e.target === e.currentTarget) setPreviewVisible(false)
 	}
-
 	const handleOnLoad = () => {
-		setLoading(false)
-		setFade({
-			opacity: "100",
-			duration: "300",
+		setLoadingFade({
+			opacity: "opacity-0",
+			duration: "duration-0",
+		})
+		setImageFade({
+			opacity: "opacity-100",
+			duration: "duration-500",
 		})
 	}
 
@@ -103,15 +115,15 @@ export default function GalleryPreview({
 				<div className="max-md:hidden">
 					<ChangeImageButton direction={"prev"} />
 				</div>
-				
+
 				{/* LOADING INDICATOR */}
-				{loading && (
-					<div className="absolute self-center">
-						<div className="flex items-center justify-center">
-							<div className="w-3 h-12 border-2 border-zinc-300 rounded-full animate-spin delay-300"></div>
-						</div>
+				<div
+					className={`absolute self-center ease-in-out ${loadingFade.duration} ${loadingFade.opacity} delay-300`}
+				>
+					<div className="flex items-center justify-center">
+						<div className="w-3 h-12 border-2 border-zinc-300 rounded-full animate-spin delay-300"></div>
 					</div>
-				)}
+				</div>
 
 				{/* IMAGE */}
 				<div className="relative h-full w-2/3 m-10 max-md:w-11/12 max-md:bottom-12">
@@ -122,9 +134,7 @@ export default function GalleryPreview({
 						priority
 						loading="eager"
 						onLoad={handleOnLoad}
-						className={`object-contain ease-in-out duration-${fade.duration === "0" ? "0" : "300"} opacity-${
-							fade.opacity
-						}`}
+						className={`object-contain ease-in-out ${imageFade.duration} ${imageFade.opacity} `}
 					/>
 				</div>
 
