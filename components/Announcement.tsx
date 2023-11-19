@@ -29,10 +29,12 @@ export default function Announcement() {
 	}, [])
 
 	return (
-		<div className={`${show} flex-row items-center justify-center bg-[#4d61d3] p-1`}>
+		<div style={{
+			animationDuration: "4s",
+		}} className={`${show} flex-row items-center justify-center bg-[#4d61d3] p-1 animate-pulse`}>
 			<FiAlertTriangle
-				size={22}
-				color="#ee2c2c"
+				size={25}
+				color="#ff0000"
 				className="mr-3"
 			/>
 			<h1 className="text-center text-sm max-sm:text-xs max-sm:w-2/3">{message}</h1>

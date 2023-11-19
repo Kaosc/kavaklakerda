@@ -15,9 +15,10 @@ export default function Logo() {
 		<Link
 			href={isOpen ? EASTER_DAY : EASTER_NIGHT}
 			target="_blank"
+			className="animate-pulse"
 		>
 			<Image
-				className="max-mobile:h-36 mt-10 animate-pulse hover:scale-110 transition-all duration-1000 ease-in-out"
+				className="max-mobile:h-36 mt-10 hover:scale-125 transition-all duration-1000 ease-in-out"
 				src="/assets/logo.png"
 				alt="logo"
 				width={150}
