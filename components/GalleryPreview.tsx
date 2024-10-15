@@ -117,9 +117,7 @@ export default function GalleryPreview({
 				</div>
 
 				{/* LOADING INDICATOR */}
-				<div
-					className={`absolute self-center ease-in-out ${loadingFade.duration} ${loadingFade.opacity} delay-300`}
-				>
+				<div className={`absolute self-center ease-in-out ${loadingFade.duration} ${loadingFade.opacity} delay-300`}>
 					<div className="flex items-center justify-center">
 						<div className="w-3 h-12 border-2 border-zinc-300 rounded-full animate-spin delay-300"></div>
 					</div>
@@ -129,7 +127,7 @@ export default function GalleryPreview({
 				<div className="relative h-full w-2/3 m-10 max-md:w-11/12 max-md:bottom-12">
 					<Image
 						alt="gallery"
-						src={images[currentImageIndex].src + "media?size=l"}
+						src={images[currentImageIndex].src}
 						fill
 						priority
 						loading="eager"
