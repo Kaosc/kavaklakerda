@@ -5,13 +5,22 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: "https",
+				hostname: "instagram.com",
+			},
+			{
+				protocol: "https",
 				hostname: "www.instagram.com",
 			},
 			{
 				protocol: "https",
-				hostname: "instagram.com",
+				hostname: "**.fna.fbcdn.net",
+			},
+			{
+				protocol: "http",
+				hostname: "**.fna.fbcdn.net",
 			},
 		],
 	},
-}
-module.exports = nextConfig
+};
+
+module.exports = nextConfig;
