@@ -1,5 +1,6 @@
 type GImage = {
 	src: string
+	lcl: string
 	title?: string
 	stock?: boolean
 	w?: number

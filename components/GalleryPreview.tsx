@@ -127,7 +127,7 @@ export default function GalleryPreview({
 				<div className="relative h-full w-2/3 m-10 max-md:w-11/12 max-md:bottom-12">
 					<Image
 						alt="gallery"
-						src={images[currentImageIndex].src}
+						src={images[currentImageIndex].lcl}
 						fill
 						priority
 						loading="eager"

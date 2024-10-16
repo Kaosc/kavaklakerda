@@ -71,7 +71,7 @@ export default function Gallery({
 									<Image
 										key={index}
 										alt="gallery"
-										src={img.src}
+										src={img.lcl}
 										width={img.w}
 										height={img.h}
 										className="shadow-[#000000af] object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
@@ -80,7 +80,7 @@ export default function Gallery({
 									<Image
 										key={index}
 										alt="gallery"
-										src={img.src}
+										src={img.lcl}
 										fill
 										className="object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
 									/>
