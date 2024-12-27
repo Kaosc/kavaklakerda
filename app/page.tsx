@@ -7,6 +7,11 @@ import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
 
 import FloatActionsButton from "@/components/FloatActionsButton"
 import Gallery from "@/components/Gallery"
+import XIcon from "@/components/XIcon"
+import PhoneNumber from "@/components/PhoneNumber"
+import ActiveTimes from "@/components/workingTimes/ActiveTimes"
+import Logo from "@/components/Logo"
+
 import {
 	BACKGROUND_VIDEO_URL,
 	FACEBOOK_URL,
@@ -16,10 +21,6 @@ import {
 	WHERE_BACKGROUND_VIDEO_URL,
 	X_URL,
 } from "@/utils/constants"
-import XIcon from "@/components/XIcon"
-import PhoneNumber from "@/components/PhoneNumber"
-import ActiveTimes from "@/components/workingTimes/ActiveTimes"
-import Logo from "@/components/Logo"
 
 export default function Home() {
 	return (
@@ -39,11 +40,11 @@ export default function Home() {
 					muted
 					src={BACKGROUND_VIDEO_URL}
 					typeof="video/mp4"
-				></video>
+				/>
 
 				<div className="relative min-h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057] transition-all ease-in-out">
 					{/* TITLE */}
-					<h1 className="max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-6xl text-center font-black tracking-widest animate-in slide-in-from-top duration-500">
+					<h1 className="text-7xl max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-center font-black tracking-widest animate-in slide-in-from-top duration-500">
 						KAVAKLAKERDA
 					</h1>
 					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest animate-in slide-in-from-bottom duration-500">
@@ -59,7 +60,7 @@ export default function Home() {
 					{/* SHIPPING */}
 					<div className="flex flex-col items-center justify-center mt-5 transition-all ease-in-out">
 						<p className="text-3xl max-mobile:text-base max-sm:text-2xl text-center mt-10 px-5 font-semibold">
-							Şehir İçi & Şehirler Arası Kargo İle Kapınıza Teslim
+							Şehir İçi & Şehirler Arası Kargo
 						</p>
 						<div className="mt-5 flex max-sm:flex-col-reverse items-center">
 							<div className="max-sm:mt-5 flex">
@@ -75,7 +76,7 @@ export default function Home() {
 									target="_blank"
 									className="hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 								>
-									<FaPhone className="text-[33px] max-sm:text-[29px] max-mobile:text-[25px]" />
+									<FaPhone className="text-[31px] max-sm:text-[29px] max-mobile:text-[25px] mt-[3px]" />
 								</Link>
 							</div>
 							<PhoneNumber />
@@ -84,9 +85,6 @@ export default function Home() {
 
 					{/* SOCIAL MEDIA */}
 					<div>
-						<h2 className="text-3xl font-semibold max-mobile:text-base max-sm:text-2xl text-center mt-20 px-5">
-							Sosyal Medya Hesaplarımız
-						</h2>
 						<div className="flex flex-row justify-center items-center">
 							<Link
 								href={X_URL}
@@ -101,7 +99,7 @@ export default function Home() {
 								href={INSTAGRAM_URL}
 								target="_blank"
 							>
-								<SiInstagram className="text-[35px] max-sm:text-[28px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
+								<SiInstagram className="text-[34px] max-sm:text-[28px] max-mobile:text-[25px] mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-cyan-300" />
 							</Link>
 							<Link
 								href={FACEBOOK_URL}
@@ -132,7 +130,7 @@ export default function Home() {
 
 			<section
 				id="products"
-				className="w-full min-h-screen bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
+				className="w-full min-h-screen pt-8 bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
 			>
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
@@ -175,16 +173,14 @@ export default function Home() {
 					muted
 					src={WHERE_BACKGROUND_VIDEO_URL}
 					typeof="video/mp4"
-				></video>
+				/>
 
 				<div className="relative min-h-screen flex flex-col items-center justify-center m-auto bg-gradient-to-b from-[#021a30] to-[#011425e5]">
 					{/* TITLE */}
 					<h1 className="text-7xl max-sm:text-6xl text-center font-black tracking-widest">NEREDE</h1>
 
 					{/* ADRESS */}
-					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">
-						Rumeli Kavağı Mah. Liman Cad. No:38/A
-					</h2>
+					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">Rumeli Kavağı Mah. Liman Cad. No:38/A</h2>
 					<h2 className="text-3xl max-sm:text-2xl text-center leading-[50px]">34450 Sarıyer / İstanbul</h2>
 
 					{/* PHONE */}

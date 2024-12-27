@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useMemo, useState, useContext } from "react"
-
-import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import dynamic from "next/dynamic"
+
+import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { IsOpenContext } from "@/utils/contexts"
 
 const ActiveStatus = dynamic(() => import("@/components/workingTimes/ActiveStatus"), { ssr: false })
@@ -98,22 +98,22 @@ export default function ActiveTimes() {
 	}, [])
 
 	return (
-		<div className="w-full max-sm:text-2xl max-mobile:text-xl shadow-3xl shadow-black mt-5 text-3xl text-center">
+		<div className="w-full max-sm:text-2xl max-mobile:text-xl mt-4 shadow-3xl shadow-black text-3xl text-center">
 			{/* WORKING HOURS */}
-			<div className={`flex flex-col justify-center items-center mt-5`}>
+			<div className="h-24">
+				<ActiveStatus
+					timer={timer}
+					isOpen={isOpen}
+				/>
+			</div>
+
+			<div className={`flex flex-col justify-center items-center mt-2`}>
 				<div className="flex flex-row justify-center items-center">
 					<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
 					<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
 					<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
 				</div>
 			</div>
-
-			{/* TIMER & STATUS */}
-
-			<ActiveStatus
-				timer={timer}
-				isOpen={isOpen}
-			/>
 		</div>
 	)
 }

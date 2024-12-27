@@ -21,8 +21,8 @@ export default function Logo() {
 				className="max-mobile:h-36 mt-10 hover:scale-125 transition-all duration-1000 ease-in-out"
 				src="/assets/logo.png"
 				alt="logo"
-				width={150}
-				height={150}
+				width={175}
+				height={175}
 				priority
 			/>
 		</Link>

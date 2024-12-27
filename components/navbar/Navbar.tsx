@@ -33,16 +33,16 @@ export default function Navbar() {
 		>
 			<div className="flex h-screen-10 self-center items-center justify-evenly shadow-xl h-[7vh]">
 				<a
-					href="#products"
-					className={LinkClass}
-				>
-					ÜRÜNLER
-				</a>
-				<a
 					href="#home"
 					className={LinkClass}
 				>
 					ANA SAYFA
+				</a>
+				<a
+					href="#products"
+					className={LinkClass}
+				>
+					ÜRÜNLER
 				</a>
 				<a
 					href="#where"
