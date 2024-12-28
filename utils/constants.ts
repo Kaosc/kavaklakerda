@@ -1,14 +1,14 @@
 export const FACEBOOK_URL = "https://www.facebook.com/people/Kavak-Lakerda/100068504166799/"
 export const INSTAGRAM_URL = "https://www.instagram.com/kavaklakerda"
 export const X_URL = "https://x.com/kavaklakerda"
-export const PHONE_URL = "tel:+905534945099"
-export const WHATSAPP_URL = "https://wa.me/905534945099"
 export const PHONE_NUMBER = "+90 545 284 29 43"
+export const PHONE_URL = "tel:+905452842943"
+export const WHATSAPP_URL = "https://wa.me/905452842943"
 export const BACKGROUND_VIDEO_URL = "https://i.imgur.com/5AOm4WR.mp4"
 export const WHERE_BACKGROUND_VIDEO_URL = "https://i.imgur.com/fOKAxbE.mp4"
 export const MAP_URL = "https://goo.gl/maps/utFuqqWRKaudJnxa6"
 export const EASTER_NIGHT = "https://youtu.be/AupwoN8QvbU"
 export const EASTER_DAY = "https://youtu.be/mREOvIgImmo"
+export const DEV_WEBSITE = "https://kaosc.dev"
 export const OPENING_HOURS = 9
 export const CLOSING_HOURS = 21
-export const DEV_WEBSITE = "https://kaosc.dev"
