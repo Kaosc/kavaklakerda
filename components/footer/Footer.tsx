@@ -14,12 +14,7 @@ export default function Footer() {
 
 	return (
 		<div className="flex w-full h-[300px] text-center items-center tracking-wider p-4 justify-center bg-gradient-to-b from-[#0A1726] to-[#010a13]">
-			<BubbleAnimation
-				intensity={50}
-				h={"h-[300px]"}
-			/>
-			<DipAnimation />
-			<div>
+			<div className="flex flex-col justify-center items-center z-20">
 				<h4
 					style={{
 						color: "white",
@@ -81,6 +76,11 @@ export default function Footer() {
 					</Link>
 				</div>
 			</div>
+			<BubbleAnimation
+				intensity={50}
+				h={"h-[300px]"}
+			/>
+			<DipAnimation />
 		</div>
 	)
 }
