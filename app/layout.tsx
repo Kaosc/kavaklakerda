@@ -13,12 +13,12 @@ import Announcement from "@/components/Announcement"
 export const metadata: Metadata = {
 	metadataBase: new URL("https://kavaklakerda.vercel.app/"),
 	title: {
-		default: "Kavaklakerda | Balık Şarküteri",
-		template: "%s | Kavaklakerda",
+		default: "Kavak Lakerda | Balık Şarküteri",
+		template: "%s | Kavak Lakerda",
 	},
 	description: "Balık ve deniz ürünleri konusunda uzmanlaşmış, İstanbul'un en iyi balık şarküterisi.",
 	openGraph: {
-		title: "Kavaklakerda | Balık Şarküteri",
+		title: "Kavak Lakerda | Balık Şarküteri",
 		description: "Balık ve deniz ürünleri konusunda uzmanlaşmış, İstanbul'un en iyi balık şarküterisi.",
 		url: "https://kavaklakerda.vercel.app/",
 		locale: "tr_TR",
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 	robots: "index, follow",
 	authors: [{ name: "Kaosc" }],
 	keywords: [
+		"Kavak Lakerda",
 		"kavaklakerda",
 		"kavaklakerda istanbul",
 		"balık",

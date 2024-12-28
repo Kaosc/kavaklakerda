@@ -52,7 +52,7 @@ export default function Home() {
 				<div className="relative min-h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057] transition-all ease-in-out">
 					{/* TITLE */}
 					<h1 className="text-7xl max-sm:text-3xl max-mobile:text-2xl shadow-2xl text-center font-black tracking-widest animate-in slide-in-from-top duration-500">
-						KAVAKLAKERDA
+						KAVAK LAKERDA
 					</h1>
 					<h3 className="max-sm:text-xl mt-5 max-mobile:text-lg text-4xl text-center font-black tracking-widest animate-in slide-in-from-bottom duration-500">
 						BALIK ŞARKÜTERİ

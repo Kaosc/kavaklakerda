@@ -20,7 +20,7 @@ export default function Footer() {
 						color: "white",
 					}}
 				>
-					Kavaklakerda @ {year} <br />{" "}
+					Kavak Lakerda @ {year} <br />{" "}
 					<Link
 						href={DEV_WEBSITE}
 						target="_blank"
