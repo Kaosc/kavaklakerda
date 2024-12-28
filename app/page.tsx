@@ -5,11 +5,12 @@ import { SiInstagram, SiFacebook } from "react-icons/si"
 
 import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
 
+import BubbleAnimation from "@/components/animations/BubbleAnimation"
 import FloatActionsButton from "@/components/FloatActionsButton"
+import ActiveTimes from "@/components/workingTimes/ActiveTimes"
+import PhoneNumber from "@/components/PhoneNumber"
 import Gallery from "@/components/Gallery"
 import XIcon from "@/components/XIcon"
-import PhoneNumber from "@/components/PhoneNumber"
-import ActiveTimes from "@/components/workingTimes/ActiveTimes"
 import Logo from "@/components/Logo"
 
 import {
@@ -26,6 +27,7 @@ export default function Home() {
 	return (
 		<main className="flex flex-col items-center">
 			{/* FLOAT ACTIONS BUTTON */}
+
 			<div className="fixed bottom-2 right-2 z-50">
 				<FloatActionsButton />
 			</div>
@@ -41,6 +43,11 @@ export default function Home() {
 					src={BACKGROUND_VIDEO_URL}
 					typeof="video/mp4"
 				/>
+
+				{/* BUBBLES */}
+				<div className="bottom-0 absolute w-full h-[200px]">
+					<BubbleAnimation intensity={50} />
+				</div>
 
 				<div className="relative min-h-screen pt-24 flex flex-col justify-start items-center bg-gradient-to-b from-[#00000000] to-[#053057] transition-all ease-in-out">
 					{/* TITLE */}
@@ -115,6 +122,9 @@ export default function Home() {
 			{/* GALLERY */}
 
 			<section className="flex flex-col min-h-screen w-full justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+				{/* BUBBLES */}
+				<BubbleAnimation intensity={25} />
+
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 				<Gallery
 					justify="justify-around"
@@ -132,6 +142,9 @@ export default function Home() {
 				id="products"
 				className="w-full min-h-screen pt-8 bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
 			>
+				{/* BUBBLES */}
+				<BubbleAnimation intensity={35} />
+
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"
@@ -147,6 +160,9 @@ export default function Home() {
 			{/* PRODUCTS 2 */}
 
 			<section className="w-full min-h-screen py-20 bg-gradient-to-b from-[#1b3a57] to-[#021a30]">
+				{/* BUBBLES */}
+				<BubbleAnimation intensity={45} />
+
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
 				<Gallery
 					justify="justify-center"

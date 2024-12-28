@@ -3,14 +3,22 @@ import Link from "next/link"
 import { FaPhoneSquareAlt, FaWhatsapp } from "react-icons/fa"
 import { SiFacebook, SiInstagram } from "react-icons/si"
 
+import BubbleAnimation from "../animations/BubbleAnimation"
+
+import { DEV_WEBSITE, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL, WHATSAPP_URL, X_URL } from "@/utils/constants"
 import XIcon from "../XIcon"
-import { FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL, WHATSAPP_URL, X_URL } from "@/utils/constants"
+import DipAnimation from "../animations/DipAnimation"
 
 export default function Footer() {
 	const year = new Date().getFullYear()
 
 	return (
 		<div className="flex w-full h-[300px] text-center items-center tracking-wider p-4 justify-center bg-gradient-to-b from-[#0A1726] to-[#010a13]">
+			<BubbleAnimation
+				intensity={50}
+				h={"h-[300px]"}
+			/>
+			<DipAnimation />
 			<div>
 				<h4
 					style={{
@@ -19,7 +27,7 @@ export default function Footer() {
 				>
 					Kavaklakerda @ {year} <br />{" "}
 					<Link
-						href="https://kaosc.vercel.app"
+						href={DEV_WEBSITE}
 						target="_blank"
 						className="text-[13px] hover:animate-pulse hover:font-bold ease-in-out transition-all duration-200"
 					>

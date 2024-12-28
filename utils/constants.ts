@@ -11,3 +11,4 @@ export const EASTER_NIGHT = "https://youtu.be/AupwoN8QvbU"
 export const EASTER_DAY = "https://youtu.be/mREOvIgImmo"
 export const OPENING_HOURS = 9
 export const CLOSING_HOURS = 21
+export const DEV_WEBSITE = "https://kaosc.dev"
