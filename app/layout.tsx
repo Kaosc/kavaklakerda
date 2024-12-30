@@ -9,6 +9,7 @@ import NavbarMargin from "@/components/navbar/NavbarMargin"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
 import Announcement from "@/components/Announcement"
+import { FACEBOOK_URL, INSTAGRAM_URL, X_URL } from "@/utils/constants"
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://kavaklakerda.vercel.app/"),
@@ -49,6 +50,21 @@ export const metadata: Metadata = {
 		"kavaklakerda fish delicatessen fish delicatessen istanbul",
 		"kavaklakerda fish delicatessen fish delicatessen turkey İstanbul/",
 	],
+	verification: {
+		google: "oZV9oMz8xInRmpVZ3SKxdxLhRQ26GGqaL0dR6uhrrL8",
+	},
+	icons: {
+		icon: "favicon.png",
+	},
+}
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	name: "Kavak Lakerda",
+	url: "https://kavaklakerda.vercel.app/",
+	logo: "/assets/logo.png",
+	sameAs: [FACEBOOK_URL, INSTAGRAM_URL, X_URL],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -57,23 +73,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			lang="tr"
 			className="dark"
 		>
-			<meta
-				name="google-site-verification"
-				content="oZV9oMz8xInRmpVZ3SKxdxLhRQ26GGqaL0dR6uhrrL8"
-			/>
-			<link
-				rel="icon"
-				href="favicon.png"
-			/>
-			<meta
-				name="viewport"
-				content="width=device-width, initial-scale=1"
-			/>
-			<meta
-				name="theme-color"
-				content="#000000"
-			/>
-			<meta name="darkreader-lock" />
+			<head>
+				<meta
+					name="theme-color"
+					content="#000000"
+				/>
+				<meta name="darkreader-lock" />
+				{/* JSON-LD script for structured data */}
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+				/>
+			</head>
 			<body className={inter.className}>
 				<Providers>
 					<Announcement />
