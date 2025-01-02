@@ -2,11 +2,11 @@ import React from "react"
 import Link from "next/link"
 import { FaPhoneSquareAlt, FaWhatsapp } from "react-icons/fa"
 import { SiFacebook, SiInstagram } from "react-icons/si"
+import { FaXTwitter } from "react-icons/fa6"
 
 import BubbleAnimation from "../animations/BubbleAnimation"
 
 import { DEV_WEBSITE, FACEBOOK_URL, INSTAGRAM_URL, PHONE_URL, WHATSAPP_URL, X_URL } from "@/utils/constants"
-import XIcon from "../XIcon"
 import DipAnimation from "../animations/DipAnimation"
 
 export default function Footer() {
@@ -35,7 +35,10 @@ export default function Footer() {
 						href={X_URL}
 						target="_blank"
 					>
-						<XIcon />
+						<FaXTwitter
+							className="mt-5 mr-5 hover:scale-110 ease-in-out transition-all duration-200 hover:text-[#30608d]"
+							size={25}
+						/>
 					</Link>
 					<Link
 						href={INSTAGRAM_URL}

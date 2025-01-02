@@ -1,24 +1,17 @@
 export const galleryImages = [
-	{ src: "https://instagram.com/p/CimbWlbLnHd/media?size=l", lcl: "./../assets/products/g1.jpg", w: 470, h: 400 },
-	{ src: "https://instagram.com/p/CrXq00LsC47/media?size=l", lcl: "./../assets/products/g2.jpg", w: 768, h: 470 },
-	{ src: "https://instagram.com/p/CimbjpsLZKS/media?size=l", lcl: "./../assets/products/g3.jpg", w: 470, h: 400 },
-	// { src: "https://instagram.com/p/Cimdk7mLdD1/media?size=l" },
-	// { src: "https://instagram.com/p/Cg6-fTJsGxw/media?size=l" },
-	// { src: "https://instagram.com/p/CGXYCBxAT1i/media?size=l" },
-	// { src: "https://instagram.com/p/CimeJx_rUOQ/media?size=l" },
-	// { src: "https://instagram.com/p/CeYQ2VPLLOl/media?size=l" },
-	// { src: "https://instagram.com/p/Cg68eBLseE1/media?size=l" },
-	// { src: "https://instagram.com/p/CtTSCyorsRb/media?size=l" },
+	{ lcl: "./../assets/products/g1.jpg", w: 470, h: 470 },
+	{ lcl: "./../assets/products/g2.jpg", w: 770, h: 470 },
+	{ lcl: "./../assets/products/g3.jpg", w: 470, h: 470 },
 ]
 
 export const productImages_1 = [
-	{ src: "https://instagram.com/p/CtJP_1wsmXy/media?size=l", lcl: "./../assets/products/p2-1.jpg" },
-	{ src: "https://instagram.com/p/CrXsF5WslT0/media?size=l", lcl: "./../assets/products/p2-2.jpg" },
-	{ src: "https://instagram.com/p/CrSe-o-t4Lb/media?size=l", lcl: "./../assets/products/p2-3.jpg" },
-	{ src: "https://instagram.com/p/Cfn86_2rDKM/media?size=l", lcl: "./../assets/products/p2-4.jpg" },
-	{ src: "https://instagram.com/p/CYvfDUFIQlR/media?size=l", lcl: "./../assets/products/p2-5.jpg" },
-	{ src: "https://instagram.com/p/CWNyfQ1oLPq/media?size=l", lcl: "./../assets/products/p2-6.jpg" },
-	{ src: "https://instagram.com/p/CVC8NPYAbA1/media?size=l", lcl: "./../assets/products/p2-7.jpg" },
+	{ lcl: "./../assets/products/p2-1.jpg" },
+	{ lcl: "./../assets/products/p2-2.jpg" },
+	{ lcl: "./../assets/products/p2-3.jpg" },
+	{ lcl: "./../assets/products/p2-4.jpg" },
+	{ lcl: "./../assets/products/p2-5.jpg" },
+	{ lcl: "./../assets/products/p2-6.jpg" },
+	{ lcl: "./../assets/products/p2-7.jpg" },
 ]
 
 export const productImages_2 = [

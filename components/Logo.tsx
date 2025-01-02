@@ -18,11 +18,11 @@ export default function Logo() {
 			className="animate-pulse"
 		>
 			<Image
-				className="max-mobile:h-36 mt-10 hover:scale-125 transition-all duration-1000 ease-in-out"
+				className="mb-2 max-mobile:h-36 mt-10 hover:scale-125 transition-all duration-1000 ease-in-out w-[250px] h-[250px] max-xl:w-[170px] max-xl:h-[170px]"
 				src="/assets/logo.png"
 				alt="logo"
-				width={175}
-				height={175}
+				width={250}
+				height={250}
 				priority
 			/>
 		</Link>

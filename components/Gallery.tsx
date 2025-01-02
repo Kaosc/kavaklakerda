@@ -12,7 +12,8 @@ export default function Gallery({
 	mx,
 	my,
 	justify,
-	className,
+	containerClassName,
+	imageClassName,
 }: {
 	images: GImage[]
 	w?: string
@@ -20,11 +21,12 @@ export default function Gallery({
 	mx: string
 	my: string
 	justify?: string
-	className?: React.HTMLAttributes<HTMLDivElement>["className"]
+	containerClassName?: React.HTMLAttributes<HTMLDivElement>["className"]
+	imageClassName?: React.HTMLAttributes<HTMLImageElement>["className"]
 }) {
 	const [previewVisible, setPreviewVisible] = useState(false)
 	const startIndex = useRef(0)
-
+	console.log(imageClassName)
 	// Hide scrollbar when preview is visible
 	useEffect(() => {
 		document.body.style.overflow = previewVisible ? "hidden" : "auto"
@@ -39,7 +41,7 @@ export default function Gallery({
 					images={images}
 				/>
 			)}
-			<div className={"items-center flex flex-wrap h-full " + justify + " " + className}>
+			<div className={"items-center flex flex-wrap h-full " + justify + " " + containerClassName}>
 				{images.map((img: GImage, index: number) => {
 					return (
 						<div
@@ -74,7 +76,7 @@ export default function Gallery({
 										src={img.lcl}
 										width={img.w}
 										height={img.h}
-										className="shadow-[#000000af] object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
+										className={`shadow-[#18456f] object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9] ${imageClassName}`}
 									/>
 								) : (
 									<Image
@@ -82,7 +84,7 @@ export default function Gallery({
 										alt="gallery"
 										src={img.lcl}
 										fill
-										className="object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9]"
+										className={`object-cover rounded-3xl shadow-xl ease-in-out transition-all duration-200 hover:shadow-[#588299b9] ${imageClassName}`}
 									/>
 								)}
 

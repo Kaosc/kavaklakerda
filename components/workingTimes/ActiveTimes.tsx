@@ -1,26 +1,22 @@
 "use client"
 
-import { useEffect, useMemo, useState, useContext } from "react"
+import { useEffect, useMemo, useState, useContext, useCallback } from "react"
 import { AiOutlineClockCircle } from "react-icons/ai"
-import dynamic from "next/dynamic"
+import { CgSandClock } from "react-icons/cg"
 
 import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { IsOpenContext } from "@/utils/contexts"
 
-const ActiveStatus = dynamic(() => import("@/components/workingTimes/ActiveStatus"), { ssr: false })
-
 export default function ActiveTimes() {
+	const { isOpen, setIsOpen } = useContext<IsOpenContext>(IsOpenContext)
+
 	const [date, setCurrentDate] = useState(new Date())
+	const [timeStatus, setTimeStatus] = useState("")
+
 	const [hour, min, sec] = useMemo(() => [date.getHours(), date.getMinutes(), date.getSeconds()], [date])
 
 	const defaultTimerState = useMemo(() => {
 		let res = { hours: 0, min: 0, sec: 0 }
-
-		/*
-			09:00 - 21:00 (opens every day)
-			open now - close in hh:mm:ss
-			close now - open in hh:mm:ss
-		*/
 
 		if (hour >= OPENING_HOURS && hour < CLOSING_HOURS) {
 			res.hours = CLOSING_HOURS - hour - 1
@@ -40,21 +36,10 @@ export default function ActiveTimes() {
 	}, [hour, min, sec])
 
 	const [timer, setTimer] = useState(defaultTimerState)
-	const { isOpen, setIsOpen } = useContext<IsOpenContext>(IsOpenContext)
 
-	// Set isOpen state via current time
 	useEffect(() => {
-		if (hour >= 9 && hour < 21) {
-			setIsOpen(true)
-		} else {
-			setIsOpen(false)
-		}
-	}, [hour, setIsOpen])
-
-	// Save isOpen state to localStorage
-	useEffect(() => {
-		localStorage.setItem("isOpen", JSON.stringify(isOpen))
-	}, [isOpen])
+		updateTimerStatus()
+	}, [timer.hours])
 
 	// Reset timer when time is up & change isOpen state
 	useEffect(() => {
@@ -62,8 +47,9 @@ export default function ActiveTimes() {
 			setIsOpen((prev: boolean) => !prev)
 			setTimer(defaultTimerState)
 			setCurrentDate(new Date())
+			updateTimerStatus()
 		}
-	}, [timer, defaultTimerState, setIsOpen])
+	}, [timer, defaultTimerState])
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -97,22 +83,52 @@ export default function ActiveTimes() {
 		return () => clearInterval(interval)
 	}, [])
 
+	const updateTimerStatus = useCallback(() => {
+		let res = ""
+
+		if (isOpen) {
+			if (timer.hours === 0 && timer.min < 10) {
+				res = "birazdan kapanacak"
+			} else if (timer.hours === 0) {
+				res = `${timer.min} dakika sonra kapanıyor`
+			} else {
+				res = `${timer.hours} saat sonra kapanıyor`
+			}
+		} else {
+			if (timer.hours === 0 && timer.min < 10) {
+				res = "birazdan açılacak"
+			} else if (timer.hours === 0) {
+				res = `${timer.min} dakika sonra açılıyor`
+			} else {
+				res = `${timer.hours} saat sonra açılıyor`
+			}
+		}
+
+		setTimeStatus(res)
+	}, [isOpen, timer])
+
 	return (
-		<div className="w-full max-sm:text-2xl max-mobile:text-xl mt-4 shadow-3xl shadow-black text-3xl text-center">
-			{/* WORKING HOURS */}
-			<div className="h-24">
-				<ActiveStatus
-					timer={timer}
-					isOpen={isOpen}
-				/>
+		<div className="shadow-3xl shadow-black text-center">
+			{/* STORE STATUS */}
+			<div
+				className={`flex flex-col items-end max-xl:items-center transition-all ease-in-out animate-in fade-in-0 duration-1000 font-extralight`}
+			>
+				<div className="flex justify-center items-center">
+					<div className={`mt-4 py-3 px-4 rounded-xl ${isOpen ? "bg-[#4a48c4]" : "bg-red-500"}`}>
+						<p className="text-3xl font-bold animate-pulse">{isOpen ? "AÇIK" : "KAPALI"}</p>
+					</div>
+				</div>
+				<div className={`flex flex-row justify-center items-center text-xl max-mobile:text-xs mt-4 font-extralight`}>
+					<p className=" mr-2">{timeStatus}</p>
+					<CgSandClock className="text-2xl max-mobile:text-xs text-[19px] animate-pulse mb-[1px]" />
+				</div>
 			</div>
 
-			<div className={`flex flex-col justify-center items-center mt-2`}>
-				<div className="flex flex-row justify-center items-center">
-					<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
-					<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
-					<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
-				</div>
+			{/* WORKING HOURS */}
+			<div className={`flex flex-row justify-center items-center mt-2 font-extralight`}>
+				<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
+				<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
+				<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
 			</div>
 		</div>
 	)

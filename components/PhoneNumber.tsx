@@ -24,7 +24,7 @@ export default function PhoneNumber() {
 					setToolTipContent("Kopyalandı!")
 				}}
 			>
-				<p className="text-3xl max-mobile:text-base max-sm:text-2xl max:sm:mb-5 text-center ml-4 px-3 hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100">
+				<p className="max-xl:text-center text-[28px] max-mobile:text-base max-sm:text-2xl max:sm:mb-5 text-center ml-5 max-xl:ml-0 hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100">
 					{PHONE_NUMBER}
 				</p>
 			</div>
