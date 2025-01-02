@@ -89,7 +89,7 @@ export default function Home() {
 										target="_blank"
 										className="hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 									>
-										<FaPhone className="text-[27px] max-sm:text-[25px] max-mobile:text-[21px] mt-[3px]" />
+										<FaPhone className="text-[27px] max-sm:text-[22px] max-mobile:text-[21px] mt-[3px]" />
 									</Link>
 								</div>
 								<PhoneNumber />

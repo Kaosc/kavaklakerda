@@ -26,7 +26,7 @@ export default function Gallery({
 }) {
 	const [previewVisible, setPreviewVisible] = useState(false)
 	const startIndex = useRef(0)
-	console.log(imageClassName)
+
 	// Hide scrollbar when preview is visible
 	useEffect(() => {
 		document.body.style.overflow = previewVisible ? "hidden" : "auto"
