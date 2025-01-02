@@ -92,7 +92,8 @@ export default function ActiveTimes() {
 			} else if (timer.hours === 0) {
 				res = `${timer.min} dakika sonra kapanıyor`
 			} else {
-				res = `${timer.hours} saat sonra kapanıyor`
+				const estimatedHour = timer.min > 30 ? timer.hours + 1 : timer.hours
+				res = `${estimatedHour} saat sonra kapanıyor`
 			}
 		} else {
 			if (timer.hours === 0 && timer.min < 10) {
@@ -100,7 +101,8 @@ export default function ActiveTimes() {
 			} else if (timer.hours === 0) {
 				res = `${timer.min} dakika sonra açılıyor`
 			} else {
-				res = `${timer.hours} saat sonra açılıyor`
+				const estimatedHour = timer.min > 30 ? timer.hours + 1 : timer.hours
+				res = `${estimatedHour} saat sonra açılıyor`
 			}
 		}
 
@@ -119,8 +121,14 @@ export default function ActiveTimes() {
 					</div>
 				</div>
 				<div className={`flex flex-row justify-center items-center text-xl max-mobile:text-xs mt-4 font-extralight`}>
-					<p className=" mr-2">{timeStatus}</p>
-					<CgSandClock className="text-2xl max-mobile:text-xs text-[19px] animate-pulse mb-[1px]" />
+					{timeStatus ? (
+						<p className="transition-all ease-in-out animate-in fade-in-0 mr-2 duration-1000">{timeStatus}</p>
+					) : (
+						<></>
+					)}
+					<CgSandClock
+						className={`text-2xl max-mobile:text-xs text-[26px] my-1 mb-[1px] ${timeStatus ? "animate-pulse" : "animate-spin"} `}
+					/>
 				</div>
 			</div>
 
