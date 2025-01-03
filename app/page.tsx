@@ -22,6 +22,7 @@ import {
 	WHERE_BACKGROUND_VIDEO_URL,
 	X_URL,
 } from "@/utils/constants"
+import SliderGallery from "@/components/sliderGallery/SliderGallery"
 
 export default function Home() {
 	return (
@@ -129,15 +130,8 @@ export default function Home() {
 				<BubbleAnimation intensity={25} />
 
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
-				<Gallery
-					justify="justify-around"
-					images={galleryImages}
-					w={"max-w-[1000px]"}
-					h={"max-h-[1000px]"}
-					mx={"mx-5"}
-					my={"my-5"}
-					imageClassName="rounded-[10px]"
-				/>
+
+				<SliderGallery />
 			</section>
 
 			{/* PRODUCTS 1 */}

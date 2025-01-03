@@ -1,0 +1,12 @@
+.swiper-slide {
+	transition: all 0.75s ease-in-out;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+	opacity: 0.6;
+}
+
+.swiper-slide-active {
+	opacity: 1;
+}
