@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { HTMLAttributes } from "react"
+import { motion } from "framer-motion"
+import { isMobile } from "react-device-detect"
 
 /**
  *
@@ -15,7 +16,8 @@ export default function BubbleAnimation({
 	intensity?: number
 	h?: HTMLAttributes<HTMLDivElement>["className"]
 }) {
-	const bubbles = Array.from({ length: intensity }) // Create 20 bubbles
+	console.log("isMobile", isMobile)
+	const bubbles = Array.from({ length: isMobile ? 1 : intensity }) // Create 20 bubbles
 
 	return (
 		<div className={`w-full ${h} absolute overflow-hidden`}>

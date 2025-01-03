@@ -79,7 +79,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					content="#000000"
 				/>
 				<meta name="darkreader-lock" />
-				{/* JSON-LD script for structured data */}
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

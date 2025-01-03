@@ -3,8 +3,9 @@ import Link from "next/link"
 import { SiInstagram, SiFacebook } from "react-icons/si"
 import { FaXTwitter, FaPhone, FaWhatsapp } from "react-icons/fa6"
 
-import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
+import { productImages_1, productImages_2 } from "@/data/images"
 
+import SliderGallery from "@/components/sliderGallery/SliderGallery"
 import BubbleAnimation from "@/components/animations/BubbleAnimation"
 import FloatActionsButton from "@/components/FloatActionsButton"
 import ActiveTimes from "@/components/workingTimes/ActiveTimes"
@@ -17,12 +18,13 @@ import {
 	FACEBOOK_URL,
 	GOOGLE_MAPS_EMBED,
 	INSTAGRAM_URL,
+	MAP_URL,
 	PHONE_URL,
+	SITE_DESCRIPTION,
 	WHATSAPP_URL,
 	WHERE_BACKGROUND_VIDEO_URL,
 	X_URL,
 } from "@/utils/constants"
-import SliderGallery from "@/components/sliderGallery/SliderGallery"
 
 export default function Home() {
 	return (
@@ -57,9 +59,8 @@ export default function Home() {
 						<h1 className="max-xl:text-center text-7xl max-xl:text-5xl max-sm:text-4xl max-mobile:text-3xl shadow-2xl font-black tracking-widest animate-in slide-in-from-top duration-500">
 							KAVAK LAKERDA
 						</h1>
-						<h3 className="max-xl:text-center text-2xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500">
-							Balık ve deniz ürünleri konusunda uzmanlaşmış
-							<p>İstanbul&apos;un en iyi balık şarküterisi</p>
+						<h3 className="max-xl:text-center max-lg:px-32 max-md:px-24 max-sm:px-2 text-2xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500">
+							{SITE_DESCRIPTION}
 						</h3>
 
 						{/* LOGO */}
@@ -178,7 +179,7 @@ export default function Home() {
 				id="where"
 				className="relative w-full min-h-screen"
 			>
-				{/* VIDEO BACKGROUND */}
+				{/* WHERE VIDEO BACKGROUND */}
 				<video
 					id="home"
 					className="absolute w-full h-full object-cover brightness-200 grayscale"
@@ -194,17 +195,23 @@ export default function Home() {
 					<h1 className="text-7xl max-sm:text-6xl text-center font-black tracking-widest">NEREDE</h1>
 
 					{/* ADRESS */}
-					<h2 className="text-3xl max-sm:text-2xl text-center mt-10">Rumeli Kavağı Mah. Liman Cad. No:38/A</h2>
-					<h2 className="text-3xl max-sm:text-2xl text-center leading-[50px]">34450 Sarıyer / İstanbul</h2>
+					<Link
+						href={MAP_URL}
+						target="_blank"
+						className="flex flex-col items-center justify-center hover:text-cyan-300 ease-in-out transition-all duration-100 text-3xl max-md:text-2xl font-extralight max-sm:text-lg text-center"
+					>
+						<h2 className="mt-10">Rumeli Kavağı Mah. Liman Cad. No:38/A</h2>
+						<h2 className="leading-[50px]">34450, Sarıyer / İstanbul</h2>
+					</Link>
 
 					{/* PHONE */}
-					<div className="flex flex-row items-center justify-center mt-10">
+					<div className="flex flex-row items-center justify-center mt-10 font-extralight">
 						<Link
 							href={PHONE_URL}
 							target="_blank"
 							className="items-center hover:scale-105 hover:text-cyan-300 ease-in-out transition-all duration-100"
 						>
-							<FaPhone size={29} />
+							<FaPhone className="max-md:mr-3 text-3xl max-md:text-2xl" />
 						</Link>
 						<PhoneNumber />
 					</div>

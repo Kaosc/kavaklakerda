@@ -1,11 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { isMobile } from "react-device-detect"
 
 export default function DipAnimation() {
-	// Fish and grass arrays
-	const fishArray = Array.from({ length: 6 }) // 6 fish
-	const grassArray = Array.from({ length: 35 }) // 20 grass blades
+	const fishArray = Array.from({ length: isMobile ? 1 : 6 })
+	const grassArray = Array.from({ length: isMobile ? 10 : 35 })
 
 	return (
 		<div className="absolute w-full h-[300px] overflow-hidden">
@@ -15,16 +15,16 @@ export default function DipAnimation() {
 					<motion.div
 						key={index}
 						initial={{ rotate: -5 }}
-						animate={{ rotate: [5, -5, 5] }} // Swaying effect
+						animate={{ rotate: [5, -5, 5] }}
 						transition={{
-							duration: Math.random() * 2 + 2, // Random speed
+							duration: Math.random() * 2 + 2,
 							repeat: Infinity,
 							ease: "easeInOut",
 						}}
 						className="bg-green-500/80 w-1 rounded-t-full"
 						style={{
-							marginLeft: `${Math.random() * 4}vw`, // Random spacing
-							height: `${Math.random() * 60 + 40}px`, // Random height
+							marginLeft: `${Math.random() * 4}vw`,
+							height: `${Math.random() * 60 + 40}px`,
 						}}
 					/>
 				))}
@@ -32,21 +32,21 @@ export default function DipAnimation() {
 
 			{/* Fish Animation */}
 			{fishArray.map((_, index) => {
-				const size = Math.random() * 40 + 20 // Random fish size
+				const size = Math.random() * 40 + 20
 
 				return (
 					<motion.div
 						key={index}
 						initial={{
 							x: "-10vw",
-							y: `${Math.random() * 200}px`, // Random height within the 300px container
-							scale: Math.random() * 0.6 + 0.8, // Random scale
+							y: `${Math.random() * 200}px`,
+							scale: Math.random() * 0.6 + 0.8,
 						}}
 						animate={{
-							x: "110vw", // Swim to the right
+							x: "110vw",
 						}}
 						transition={{
-							duration: Math.random() * 10 + 5, // Random speed
+							duration: Math.random() * 10 + 5,
 							repeat: Infinity,
 							ease: "linear",
 						}}

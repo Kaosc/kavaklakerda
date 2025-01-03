@@ -14,3 +14,5 @@ export const OPENING_HOURS = 9
 export const CLOSING_HOURS = 21
 export const GOOGLE_MAPS_EMBED =
 	"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48046.38772473157!2d29.073538!3d41.180365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409fdfd9e82d2cad%3A0x4264152b9c228659!2zS2F2YWsgTGFrZXJkYSBCYWzEsWsgxZ5hcmvDvHRlcmk!5e0!3m2!1str!2str!4v1692214461035!5m2!1str!2str"
+export const SITE_DESCRIPTION =
+	"Kavak Lakerda, balık ve deniz ürünleri konusunda uzmanlaşmış İstanbul'un en iyi balık şarküterisi"
