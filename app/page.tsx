@@ -52,14 +52,14 @@ export default function Home() {
 
 				<div className="flex max-xl:flex-col max-xl:items-center max-xl:justify-center relative min-h-screen pt-24 bg-gradient-to-b from-[#00000000] to-[#053057] transition-all ease-in-out">
 					{/* LEFT */}
-					<div className="flex w-full flex-col items-start pt-40 pl-56 max-xl:pt-0 max-xl:pl-0 max-xl:items-center max-xl:justify-center">
+					<div className="flex w-full flex-col items-start pt-40 pl-56 max-2xl:pl-32 max-xl:pt-0 max-xl:pl-0 max-xl:items-center max-xl:justify-center">
 						{/* TITLE */}
 						<h1 className="max-xl:text-center text-7xl max-xl:text-5xl max-sm:text-4xl max-mobile:text-3xl shadow-2xl font-black tracking-widest animate-in slide-in-from-top duration-500">
 							KAVAK LAKERDA
 						</h1>
-						<h3 className="max-xl:text-center text-2xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500">
+						<h3 className="max-xl:text-center text-2xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500">
 							Balık ve deniz ürünleri konusunda uzmanlaşmış
-							<p>İstanbul&apos;un en iyi balık şarküterisi.</p>
+							<p>İstanbul&apos;un en iyi balık şarküterisi</p>
 						</h3>
 
 						{/* LOGO */}
@@ -67,13 +67,13 @@ export default function Home() {
 					</div>
 
 					{/* RIGHT */}
-					<div className="flex w-full flex-col items-end pt-40 pr-56 max-xl:pt-0 max-xl:pr-0 max-xl:items-center max-xl:justify-center">
+					<div className="flex w-full flex-col items-end pt-40 pr-56 max-2xl:pr-40 max-xl:pt-0 max-xl:pr-0 max-xl:items-center max-xl:justify-center">
 						{/* WORKING HOURS */}
 						<ActiveTimes />
 
 						{/* SHIPPING */}
 						<div className="flex flex-col transition-all ease-in-out mt-3">
-							<p className="text-3xl max-mobile:text-base max-sm:text-2xl mt-10 font-semibold max-xl:text-center">
+							<p className="text-3xl text-end max-mobile:text-base max-sm:text-2xl mt-10 font-semibold max-xl:text-center">
 								Şehir İçi & Şehirler Arası Kargo
 							</p>
 							<div className="mt-5 flex max-xl:flex-col-reverse justify-end max-xl:items-center max-xl:justify-center font-extralight">
