@@ -17,37 +17,37 @@ export default function BubbleAnimation({
 	h?: HTMLAttributes<HTMLDivElement>["className"]
 }) {
 	console.log("isMobile", isMobile)
-	const bubbles = Array.from({ length: isMobile ? 1 : intensity }) // Create 20 bubbles
+	const bubbles = Array.from({ length: isMobile ? 1 : intensity })
 
 	return (
 		<div className={`w-full ${h} absolute overflow-hidden`}>
 			{bubbles.map((_, index) => {
-				const size = Math.random() * 30 + 10 // Random size between 10 and 40
+				const size = Math.random() * 30 + 10
 				return (
 					<motion.div
 						key={index}
 						initial={{
 							y: "90vh",
-							x: `${Math.random() * 100}vw`, // Random horizontal position
-							scale: Math.random() * 0.6 + 0.4, // Random scale
+							x: `${Math.random() * 100}vw`,
+							scale: Math.random() * 0.6 + 0.4,
 							opacity: 0,
 						}}
 						animate={{
-							y: "0vh", // Moves to the top
-							opacity: [0, 0.8, 0], // Fades in and out
+							y: "0vh",
+							opacity: [0, 0.8, 0],
 						}}
 						transition={{
-							duration: Math.random() * 5 + 3, // Random duration between 3 and 8 seconds
-							repeat: Infinity, // Loops forever
+							duration: Math.random() * 5 + 3,
+							repeat: Infinity,
 							ease: "easeInOut",
 						}}
 						style={{
 							position: "absolute",
 							width: size,
 							height: size,
-							background: "rgba(173, 216, 230, 0.6)", // Light blue bubbles
-							borderRadius: "50%", // Makes it a circle
-							filter: "blur(2px)", // Adds a slight blur
+							background: "rgba(173, 216, 230, 0.6)",
+							borderRadius: "50%",
+							filter: "blur(2px)",
 						}}
 					/>
 				)

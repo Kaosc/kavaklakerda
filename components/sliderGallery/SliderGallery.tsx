@@ -38,7 +38,6 @@ const SliderGallery = () => {
 				<BsArrowRight className="text-white text-2xl group-hover:text-blue-500 transition-colors duration-300" />
 			)}
 
-			{/* Optional After Element for Hover Effect */}
 			<span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-full transition-all duration-300"></span>
 		</button>
 	)
@@ -53,7 +52,6 @@ const SliderGallery = () => {
 				/>
 			)}
 			<div className="w-[85%] mx-auto mt-10 mb-5">
-				{/* Container */}
 				<Swiper
 					ref={swiperRef}
 					initialSlide={1}

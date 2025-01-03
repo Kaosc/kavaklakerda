@@ -1,7 +1,8 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react"
 import Image from "next/image"
+
+import { useCallback, useEffect, useState } from "react"
 
 import { AiOutlineClose } from "react-icons/ai"
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"

@@ -1,11 +1,12 @@
-import React from "react"
 import Link from "next/link"
+
 import { FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa"
 
 import { MAP_URL, WHATSAPP_URL } from "@/utils/constants"
 
 export default function FloatActionsButton() {
-	const linkClass = "flex items-center p-3 max-mobile:p-2 hover:scale-105 hover:bg-cyan-600 rounded-full bg-[#30608d] animate-pulse transition-all ease-in-out"
+	const linkClass =
+		"flex items-center p-3 max-mobile:p-2 hover:scale-105 hover:bg-cyan-600 rounded-full bg-[#30608d] animate-pulse transition-all ease-in-out"
 	const iconClass = "text-3xl text-white max-mobile:text-2xl "
 
 	return (

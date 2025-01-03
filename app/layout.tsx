@@ -9,19 +9,19 @@ import NavbarMargin from "@/components/navbar/NavbarMargin"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
 import Announcement from "@/components/Announcement"
-import { FACEBOOK_URL, INSTAGRAM_URL, X_URL } from "@/utils/constants"
+import { FACEBOOK_URL, INSTAGRAM_URL, SITE_DESCRIPTION, SITE_URL, X_URL } from "@/utils/constants"
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://kavaklakerda.vercel.app/"),
+	metadataBase: new URL(SITE_URL),
 	title: {
 		default: "Kavak Lakerda | Balık Şarküteri",
 		template: "%s | Kavak Lakerda",
 	},
-	description: "Balık ve deniz ürünleri konusunda uzmanlaşmış, İstanbul'un en iyi balık şarküterisi.",
+	description: SITE_DESCRIPTION,
 	openGraph: {
 		title: "Kavak Lakerda | Balık Şarküteri",
-		description: "Balık ve deniz ürünleri konusunda uzmanlaşmış, İstanbul'un en iyi balık şarküterisi.",
-		url: "https://kavaklakerda.vercel.app/",
+		description: SITE_DESCRIPTION,
+		url: SITE_URL,
 		locale: "tr_TR",
 		siteName: "Kavaklakerda",
 		type: "website",
@@ -62,7 +62,7 @@ const structuredData = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
 	name: "Kavak Lakerda",
-	url: "https://kavaklakerda.vercel.app/",
+	url: SITE_URL,
 	logo: "/assets/logo.png",
 	sameAs: [FACEBOOK_URL, INSTAGRAM_URL, X_URL],
 }
