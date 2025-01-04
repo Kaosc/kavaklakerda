@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState, useContext, useCallback } from "react"
+import { useEffect, useState, useContext, useCallback } from "react"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import { CgSandClock } from "react-icons/cg"
 
@@ -9,105 +9,91 @@ import { IsOpenContext } from "@/utils/contexts"
 
 export default function ActiveTimes() {
 	const { isOpen, setIsOpen } = useContext<IsOpenContext>(IsOpenContext)
-
-	const [date, setCurrentDate] = useState(new Date())
 	const [timeStatus, setTimeStatus] = useState("")
 
-	const [hour, min, sec] = useMemo(() => [date.getHours(), date.getMinutes(), date.getSeconds()], [date])
-
-	const defaultTimerState = useMemo(() => {
-		let res = { hours: 0, min: 0, sec: 0 }
-
-		if (hour >= OPENING_HOURS && hour < CLOSING_HOURS) {
-			res.hours = CLOSING_HOURS - hour - 1
-			res.min = 60 - min - 1
-			res.sec = 60 - sec
-		} else if (hour < OPENING_HOURS) {
-			res.hours = OPENING_HOURS - hour - 1
-			res.min = 60 - min - 1
-			res.sec = 60 - sec
-		} else if (hour >= CLOSING_HOURS) {
-			res.hours = 24 - hour + OPENING_HOURS - 1
-			res.min = 60 - min - 1
-			res.sec = 60 - sec
-		}
-
-		return res
-	}, [hour, min, sec])
-
-	const [timer, setTimer] = useState(defaultTimerState)
-
 	useEffect(() => {
-		updateTimerStatus()
-	}, [timer.hours])
+		// Initial update
+		updateTimerStatus(isOpen)
 
-	// Reset timer when time is up & change isOpen state
-	useEffect(() => {
-		if (timer.hours === 0 && timer.min === 0 && timer.sec === 0) {
-			setIsOpen((prev: boolean) => !prev)
-			setTimer(defaultTimerState)
-			setCurrentDate(new Date())
-			updateTimerStatus()
-		}
-	}, [timer, defaultTimerState])
-
-	useEffect(() => {
+		// Check update every 1 minute
 		const interval = setInterval(() => {
-			setTimer((prev) => {
-				if (prev.sec > 0) {
-					return { ...prev, sec: prev.sec - 1 }
-				} else if (prev.min > 0) {
-					return {
-						...prev,
-						sec: 59,
-						min: prev.min - 1,
-					}
-				} else if (prev.hours > 0) {
-					return {
-						...prev,
-						sec: 59,
-						min: 59,
-						hours: prev.hours - 1,
-					}
-				} else {
-					return {
-						...prev,
-						sec: 0,
-						min: 0,
-						hours: 0,
-					}
-				}
-			})
-		}, 1000)
+			const date = new Date()
+			const hours = date.getHours()
+			const currentIsOpen = hours >= OPENING_HOURS && hours < CLOSING_HOURS
+
+			if (currentIsOpen !== isOpen) {
+				setIsOpen(currentIsOpen)
+			}
+
+			updateTimerStatus(currentIsOpen)
+		}, 60000)
 
 		return () => clearInterval(interval)
 	}, [])
 
-	const updateTimerStatus = useCallback(() => {
-		let res = ""
+	const updateTimerStatus = useCallback(
+		(isOpen: boolean) => {
+			let res = ""
 
-		if (isOpen) {
-			if (timer.hours === 0 && timer.min < 10) {
-				res = "birazdan kapanacak"
-			} else if (timer.hours === 0) {
-				res = `${timer.min} dakika sonra kapanıyor`
-			} else {
-				const estimatedHour = timer.min > 30 ? timer.hours + 1 : timer.hours
-				res = `${estimatedHour} saat sonra kapanıyor`
+			// Get the current time
+			const date = new Date()
+			let { hours, min, sec } = {
+				hours: date.getHours(),
+				min: date.getMinutes(),
+				sec: date.getSeconds(),
 			}
-		} else {
-			if (timer.hours === 0 && timer.min < 10) {
-				res = "birazdan açılacak"
-			} else if (timer.hours === 0) {
-				res = `${timer.min} dakika sonra açılıyor`
-			} else {
-				const estimatedHour = timer.min > 30 ? timer.hours + 1 : timer.hours
-				res = `${estimatedHour} saat sonra açılıyor`
-			}
-		}
 
-		setTimeStatus(res)
-	}, [isOpen, timer])
+			// Calculate the remaining time
+			if (hours >= OPENING_HOURS && hours < CLOSING_HOURS) {
+				hours = CLOSING_HOURS - hours - 1
+				min = 60 - min - 1
+				sec = 60 - sec
+			} else if (hours < OPENING_HOURS) {
+				hours = OPENING_HOURS - hours - 1
+				min = 60 - min - 1
+				sec = 60 - sec
+			} else if (hours >= CLOSING_HOURS) {
+				hours = 24 - hours + OPENING_HOURS - 1
+				min = 60 - min - 1
+				sec = 60 - sec
+			}
+
+			// Set the store status
+			if (isOpen) {
+				if (hours === 0 && min < 10) {
+					res = "birazdan kapanacak"
+				} else if (hours === 0) {
+					res = `${min} dakika sonra kapanıyor`
+				} else {
+					const estimatedHour = min > 30 ? hours + 1 : hours
+					res = `${estimatedHour} saat sonra kapanıyor`
+				}
+			} else {
+				if (hours === 0 && min < 10) {
+					res = "birazdan açılacak"
+				} else if (hours === 0) {
+					res = `${min} dakika sonra açılıyor`
+				} else {
+					const estimatedHour = min > 30 ? hours + 1 : hours
+					res = `${estimatedHour} saat sonra açılıyor`
+				}
+			}
+
+			setTimeStatus(res)
+		},
+		[isOpen]
+	)
+
+	const WorkingHours = useCallback(
+		() => (
+			<div className={`flex flex-row justify-center items-center mt-2 font-extralight`}>
+				<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
+				<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
+				<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
+			</div>
+		),
+		[]
+	)
 
 	return (
 		<div className="shadow-3xl shadow-black text-center">
@@ -133,11 +119,7 @@ export default function ActiveTimes() {
 			</div>
 
 			{/* WORKING HOURS */}
-			<div className={`flex flex-row justify-center items-center mt-2 font-extralight`}>
-				<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
-				<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
-				<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
-			</div>
+			<WorkingHours />
 		</div>
 	)
 }
