@@ -11,7 +11,7 @@ export const GOOGLE_MAPS_EMBED =
 export const BACKGROUND_VIDEO_URL = "https://i.imgur.com/5AOm4WR.mp4"
 export const WHERE_BACKGROUND_VIDEO_URL = "https://i.imgur.com/fOKAxbE.mp4"
 export const EASTER_NIGHT = "https://youtu.be/AupwoN8QvbU"
-export const EASTER_DAY = "https://youtu.be/mREOvIgImmo"
+export const EASTER_DAY = "https://youtu.be/TnoWOgAD054"
 export const DEV_WEBSITE = "https://kaosc.dev"
 
 export const OPENING_HOURS = 9
