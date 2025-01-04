@@ -74,6 +74,11 @@ export default function Footer() {
 				</div>
 			</div>
 
+			{/* BUBBLE ANIMATION */}
+			<BubbleAnimation
+				intensity={50}
+				h={"h-[300px]"}
+			/>
 			<DipAnimation />
 		</div>
 	)

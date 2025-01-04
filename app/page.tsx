@@ -49,7 +49,9 @@ export default function Home() {
 				/>
 
 				{/* BUBBLES */}
-				<div className="bottom-0 absolute w-full h-[200px]"></div>
+				<div className="bottom-0 absolute w-full h-[200px]">
+					<BubbleAnimation intensity={50} />
+				</div>
 
 				<div className="flex max-xl:flex-col max-xl:items-center max-xl:justify-center relative min-h-screen pt-24 bg-gradient-to-b from-[#00000000] to-[#053057] transition-all ease-in-out">
 					{/* LEFT */}
@@ -129,6 +131,7 @@ export default function Home() {
 
 			<section className="flex flex-col min-h-screen w-full justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				{/* BUBBLES */}
+				<BubbleAnimation intensity={25} />
 
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
 
@@ -142,6 +145,7 @@ export default function Home() {
 				className="w-full min-h-screen pt-8 bg-gradient-to-b from-[#2b5b88] to-[#1b3a57]"
 			>
 				{/* BUBBLES */}
+				<BubbleAnimation intensity={35} />
 
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">ÜRÜNLER</h1>
 				<Gallery
@@ -159,6 +163,7 @@ export default function Home() {
 
 			<section className="w-full min-h-screen py-20 bg-gradient-to-b from-[#1b3a57] to-[#021a30]">
 				{/* BUBBLES */}
+				<BubbleAnimation intensity={45} />
 
 				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest">KAVANOZ ÜRÜNLER</h1>
 				<Gallery

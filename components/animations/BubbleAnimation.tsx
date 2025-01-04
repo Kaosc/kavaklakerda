@@ -1,6 +1,6 @@
 "use client"
 
-import { HTMLAttributes, useEffect, useState } from "react"
+import { HTMLAttributes, memo, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { isMobile } from "react-device-detect"
 
@@ -9,7 +9,7 @@ import { isMobile } from "react-device-detect"
  * @param intensity set the intensity of the bubble count
  * @returns bubbles animation
  */
-export default function BubbleAnimation({
+function BubbleAnimation({
 	intensity = 20,
 	h = "h-full",
 }: {
@@ -21,14 +21,15 @@ export default function BubbleAnimation({
 	const [bubbles, setBubbles] = useState<{ size: number; x: number; scale: number; duration: number }[]>([])
 
 	useEffect(() => {
-		const generatedBubbles = Array.from({ length: bubbleCount }).map(() => ({
-			size: Math.random() * 30 + 10,
-			x: Math.random() * 100,
-			scale: Math.random() * 0.6 + 0.4,
-			duration: Math.random() * 5 + 3,
-		}))
-		setBubbles(generatedBubbles)
-	}, [bubbleCount])
+		setBubbles(
+			Array.from({ length: bubbleCount }).map(() => ({
+				size: Math.random() * 30 + 10,
+				x: Math.random() * 100,
+				scale: Math.random() * 0.6 + 0.4,
+				duration: Math.random() * 5 + 3,
+			}))
+		)
+	}, [])
 
 	return (
 		<div className={`w-full ${h} absolute overflow-hidden`}>
@@ -63,3 +64,5 @@ export default function BubbleAnimation({
 		</div>
 	)
 }
+
+export default memo(BubbleAnimation)
