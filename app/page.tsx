@@ -22,7 +22,6 @@ import {
 	INSTAGRAM_URL,
 	MAP_URL,
 	PHONE_URL,
-	SITE_DESCRIPTION,
 	WHATSAPP_URL,
 	WHERE_BACKGROUND_VIDEO_URL,
 	X_URL,
@@ -61,8 +60,10 @@ export default function Home() {
 						<h1 className="max-xl:text-center text-7xl max-xl:text-5xl max-sm:text-4xl max-mobile:text-3xl shadow-2xl font-black tracking-widest animate-in slide-in-from-top duration-500">
 							KAVAK LAKERDA
 						</h1>
-						<h3 className="max-xl:text-center max-lg:px-32 max-md:px-24 max-sm:px-2 text-2xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500">
-							{SITE_DESCRIPTION}
+						<h3 className="max-xl:text-center max-lg:px-32 max-md:px-24 max-sm:px-2 text-3xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500 font-extralight">
+							Balık ve deniz ürünleri konusunda uzmanlaşmış
+							<br />
+							İstanbul'un en iyi balık şarküterisi
 						</h3>
 
 						{/* LOGO */}
@@ -76,7 +77,7 @@ export default function Home() {
 
 						{/* SHIPPING */}
 						<div className="flex flex-col transition-all ease-in-out mt-3">
-							<p className="text-3xl text-end max-mobile:text-base max-sm:text-2xl mt-10 font-semibold max-xl:text-center">
+							<p className="text-3xl text-end max-mobile:text-base max-sm:text-[22px] mt-10 font-semibold max-xl:text-center">
 								Şehir İçi & Şehirler Arası Kargo
 							</p>
 							<div className="mt-5 flex max-xl:flex-col-reverse justify-end max-xl:items-center max-xl:justify-center font-extralight">
