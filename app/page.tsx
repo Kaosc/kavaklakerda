@@ -14,6 +14,8 @@ import Gallery from "@/components/Gallery"
 import Logo from "@/components/Logo"
 
 import {
+	ADRESS_LINE_1,
+	ADRESS_LINE_2,
 	BACKGROUND_VIDEO_URL,
 	FACEBOOK_URL,
 	GOOGLE_MAPS_EMBED,
@@ -200,8 +202,8 @@ export default function Home() {
 						target="_blank"
 						className="flex flex-col items-center justify-center hover:text-cyan-300 ease-in-out transition-all duration-100 text-3xl max-md:text-2xl font-extralight max-sm:text-lg text-center"
 					>
-						<h2 className="mt-10">Rumeli Kavağı Mah. Liman Cad. No:38/A</h2>
-						<h2 className="leading-[50px]">34450, Sarıyer / İstanbul</h2>
+						<h2 className="mt-10">{ADRESS_LINE_1}</h2>
+						<h2 className="leading-[50px]">{ADRESS_LINE_2}</h2>
 					</Link>
 
 					{/* PHONE */}

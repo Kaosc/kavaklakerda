@@ -5,6 +5,13 @@ export const X_URL = "https://x.com/kavaklakerda"
 export const MAP_URL = "https://goo.gl/maps/utFuqqWRKaudJnxa6"
 export const PHONE_NUMBER = "+90 545 284 29 43"
 export const PHONE_URL = "tel:+905452842943"
+export const ADRESS_LINE_1 = "Rumeli Kavağı Mah. Liman Cad. No:38/A"
+export const ADRESS_LINE_2 = "34450, Sarıyer / İstanbul"
+export const OPENING_HOURS = 9
+export const CLOSING_HOURS = 21
+export const SITE_DESCRIPTION =
+	"Kavak Lakerda, balık ve deniz ürünleri konusunda uzmanlaşmış İstanbul'un en iyi balık şarküterisi"
+export const SITE_URL = "https://kavaklakerda.vercel.app/"
 export const GOOGLE_MAPS_EMBED =
 	"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48046.38772473157!2d29.073538!3d41.180365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409fdfd9e82d2cad%3A0x4264152b9c228659!2zS2F2YWsgTGFrZXJkYSBCYWzEsWsgxZ5hcmvDvHRlcmk!5e0!3m2!1str!2str!4v1692214461035!5m2!1str!2str"
 
@@ -13,10 +20,3 @@ export const WHERE_BACKGROUND_VIDEO_URL = "https://i.imgur.com/fOKAxbE.mp4"
 export const EASTER_NIGHT = "https://youtu.be/AupwoN8QvbU"
 export const EASTER_DAY = "https://youtu.be/TnoWOgAD054"
 export const DEV_WEBSITE = "https://kaosc.dev"
-
-export const OPENING_HOURS = 9
-export const CLOSING_HOURS = 21
-
-export const SITE_DESCRIPTION =
-	"Kavak Lakerda, balık ve deniz ürünleri konusunda uzmanlaşmış İstanbul'un en iyi balık şarküterisi"
-export const SITE_URL = "https://kavaklakerda.vercel.app/"

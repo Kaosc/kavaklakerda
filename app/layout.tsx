@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 		description: SITE_DESCRIPTION,
 		url: SITE_URL,
 		locale: "tr_TR",
-		siteName: "Kavaklakerda",
+		siteName: "Kavak Lakerda",
 		type: "website",
 	},
 	robots: "index, follow",
