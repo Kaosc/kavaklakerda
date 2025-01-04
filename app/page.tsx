@@ -63,7 +63,7 @@ export default function Home() {
 						<h3 className="max-xl:text-center max-lg:px-32 max-md:px-24 max-sm:px-2 text-3xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500 font-extralight">
 							Balık ve deniz ürünleri konusunda uzmanlaşmış
 							<br />
-							İstanbul'un en iyi balık şarküterisi
+							İstanbul&apos;un en iyi balık şarküterisi
 						</h3>
 
 						{/* LOGO */}
