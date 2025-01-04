@@ -1,6 +1,6 @@
 "use client"
 
-import { HTMLAttributes } from "react"
+import { HTMLAttributes, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { isMobile } from "react-device-detect"
 
@@ -16,42 +16,50 @@ export default function BubbleAnimation({
 	intensity?: number
 	h?: HTMLAttributes<HTMLDivElement>["className"]
 }) {
-	console.log("isMobile", isMobile)
-	const bubbles = Array.from({ length: isMobile ? 1 : intensity })
+	const bubbleCount = isMobile ? 1 : intensity
+
+	const [bubbles, setBubbles] = useState<{ size: number; x: number; scale: number; duration: number }[]>([])
+
+	useEffect(() => {
+		const generatedBubbles = Array.from({ length: bubbleCount }).map(() => ({
+			size: Math.random() * 30 + 10,
+			x: Math.random() * 100,
+			scale: Math.random() * 0.6 + 0.4,
+			duration: Math.random() * 5 + 3,
+		}))
+		setBubbles(generatedBubbles)
+	}, [bubbleCount])
 
 	return (
 		<div className={`w-full ${h} absolute overflow-hidden`}>
-			{bubbles.map((_, index) => {
-				const size = Math.random() * 30 + 10
-				return (
-					<motion.div
-						key={index}
-						initial={{
-							y: "90vh",
-							x: `${Math.random() * 100}vw`,
-							scale: Math.random() * 0.6 + 0.4,
-							opacity: 0,
-						}}
-						animate={{
-							y: "0vh",
-							opacity: [0, 0.8, 0],
-						}}
-						transition={{
-							duration: Math.random() * 5 + 3,
-							repeat: Infinity,
-							ease: "easeInOut",
-						}}
-						style={{
-							position: "absolute",
-							width: size,
-							height: size,
-							background: "rgba(173, 216, 230, 0.6)",
-							borderRadius: "50%",
-							filter: "blur(2px)",
-						}}
-					/>
-				)
-			})}
+			{bubbles.map((bubble, index) => (
+				<motion.div
+					key={index + "bubble"}
+					initial={{
+						y: "90vh",
+						x: `${bubble.x}vw`,
+						scale: bubble.scale,
+						opacity: 0,
+					}}
+					animate={{
+						y: "0vh",
+						opacity: [0, 0.8, 0],
+					}}
+					transition={{
+						duration: bubble.duration,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
+					style={{
+						position: "absolute",
+						width: bubble.size,
+						height: bubble.size,
+						background: "rgba(173, 216, 230, 0.6)",
+						borderRadius: "50%",
+						filter: "blur(2px)",
+					}}
+				/>
+			))}
 		</div>
 	)
 }
