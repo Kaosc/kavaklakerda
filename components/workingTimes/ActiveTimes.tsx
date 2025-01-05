@@ -8,14 +8,19 @@ import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
 import { IsOpenContext } from "@/utils/contexts"
 
 export default function ActiveTimes() {
-	const { isOpen, setIsOpen } = useContext<IsOpenContext>(IsOpenContext)
+	const { isOpen, setIsOpen } = useContext(IsOpenContext)
 	const [timeStatus, setTimeStatus] = useState("")
+	const [hydrated, setHydrated] = useState(false)
 
 	useEffect(() => {
-		// Initial update
+		setHydrated(true)
+	}, [])
+
+	useEffect(() => {
+		if (!hydrated) return
+
 		updateTimerStatus(isOpen)
 
-		// Check update every 1 minute
 		const interval = setInterval(() => {
 			const date = new Date()
 			const hours = date.getHours()
@@ -29,7 +34,7 @@ export default function ActiveTimes() {
 		}, 60000)
 
 		return () => clearInterval(interval)
-	}, [])
+	}, [hydrated])
 
 	const updateTimerStatus = useCallback(
 		(isOpen: boolean) => {
@@ -94,6 +99,9 @@ export default function ActiveTimes() {
 		),
 		[]
 	)
+
+	// Render only after hydration
+	if (!hydrated) return null
 
 	return (
 		<div className="shadow-3xl shadow-black text-center">
