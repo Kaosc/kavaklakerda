@@ -4,7 +4,7 @@ import { useEffect, useState, useContext, useCallback } from "react"
 import { AiOutlineClockCircle } from "react-icons/ai"
 import { CgSandClock } from "react-icons/cg"
 
-import { CLOSING_HOURS, OPENING_HOURS } from "@/utils/constants"
+import { CLOSING_HOURS, CLOSING_HOURS_STR, OPENING_HOURS, OPENING_HOURS_STR } from "@/utils/constants"
 import { IsOpenContext } from "@/utils/contexts"
 
 export default function ActiveTimes() {
@@ -94,7 +94,10 @@ export default function ActiveTimes() {
 			<div className={`flex flex-row justify-center items-center mt-2 font-extralight`}>
 				<p className="text-xl mr-3 max-mobile:text-xs">Her Gün</p>
 				<AiOutlineClockCircle className="mr-3 text-2xl max-mobile:text-xs" />
-				<p className="text-xl max-mobile:text-xs"> 09:00 - 21:00 </p>
+				<p className="text-xl max-mobile:text-xs">
+					{" "}
+					{OPENING_HOURS_STR} - {CLOSING_HOURS_STR}{" "}
+				</p>
 			</div>
 		),
 		[]
