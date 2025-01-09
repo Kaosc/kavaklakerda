@@ -1,6 +1,6 @@
 "use client"
 
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -10,10 +10,15 @@ import { EASTER_DAY, EASTER_NIGHT } from "@/utils/constants"
 
 export default function Logo() {
 	const { isOpen } = useContext(IsOpenContext)
+	const [href, setHref] = useState(EASTER_DAY)
+
+	useEffect(() => {
+		setHref(isOpen ? EASTER_DAY : EASTER_NIGHT)
+	}, [isOpen])
 
 	return (
 		<Link
-			href={isOpen ? EASTER_DAY : EASTER_NIGHT}
+			href={href}
 			target="_blank"
 			className="animate-pulse"
 		>
