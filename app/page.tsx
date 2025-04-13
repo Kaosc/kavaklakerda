@@ -3,9 +3,8 @@ import Link from "next/link"
 import { SiInstagram, SiFacebook } from "react-icons/si"
 import { FaXTwitter, FaPhone, FaWhatsapp } from "react-icons/fa6"
 
-import { productImages_1, productImages_2 } from "@/data/images"
+import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
 
-import SliderGallery from "@/components/sliderGallery/SliderGallery"
 import BubbleAnimation from "@/components/animations/BubbleAnimation"
 import FloatActionsButton from "@/components/FloatActionsButton"
 import ActiveTimes from "@/components/workingTimes/ActiveTimes"
@@ -26,6 +25,7 @@ import {
 	WHERE_BACKGROUND_VIDEO_URL,
 	X_URL,
 } from "@/utils/constants"
+import { Carousel } from "@/components/carousel"
 
 export default function Home() {
 	return (
@@ -129,13 +129,15 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="flex flex-col min-h-screen w-full justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className="flex flex-col min-h-screen w-full overflow-hidden justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				{/* BUBBLES */}
 				<BubbleAnimation intensity={25} />
 
-				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-5">GALERİ</h1>
+				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-14">GALERİ</h1>
 
-				<SliderGallery />
+				<Carousel />
+
+				{/* <SliderGallery /> */}
 			</section>
 
 			{/* PRODUCTS 1 */}

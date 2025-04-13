@@ -5,18 +5,16 @@ import { motion } from "framer-motion"
 import { isMobile } from "react-device-detect"
 
 export default function DipAnimation() {
-	const fishCount = isMobile ? 1 : 6
-	const grassCount = isMobile ? 10 : 40
+	const fishCount = Math.min(isMobile ? 1 : 6, 10) // Limit to 10 fish
+	const grassCount = Math.min(isMobile ? 10 : 40, 50) // Limit to 50 grass elements
 
 	const [randomValues, setRandomValues] = useState<{
 		fishArray: { size: number; y: number; scale: number; duration: number }[]
 		grassArray: { height: number; marginLeft: number; duration: number }[]
-	}>({
-		fishArray: [],
-		grassArray: [],
-	})
+	}>({ fishArray: [], grassArray: [] })
 
 	useEffect(() => {
+		// Generate random values only on the client side
 		const fishArray = Array.from({ length: fishCount }).map(() => ({
 			size: Math.random() * 40 + 20,
 			y: Math.random() * 200,

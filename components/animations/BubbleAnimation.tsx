@@ -16,20 +16,21 @@ function BubbleAnimation({
 	intensity?: number
 	h?: HTMLAttributes<HTMLDivElement>["className"]
 }) {
-	const bubbleCount = isMobile ? 1 : intensity
-
+	const bubbleCount = Math.min(isMobile ? 1 : intensity, 50) // Limit to 50 bubbles
 	const [bubbles, setBubbles] = useState<{ size: number; x: number; scale: number; duration: number }[]>([])
 
 	useEffect(() => {
-		setBubbles(
-			Array.from({ length: bubbleCount }).map(() => ({
-				size: Math.random() * 30 + 10,
-				x: Math.random() * 100,
-				scale: Math.random() * 0.6 + 0.4,
-				duration: Math.random() * 5 + 3,
-			}))
-		)
-	}, [])
+		// Generate random values only on the client side
+		const generatedBubbles = Array.from({ length: bubbleCount }).map(() => ({
+			size: Math.random() * 30 + 10,
+			x: Math.random() * 100,
+			scale: Math.random() * 0.6 + 0.4,
+			duration: Math.random() * 5 + 3,
+		}))
+		setBubbles(generatedBubbles)
+
+		return () => setBubbles([]) // Cleanup
+	}, [bubbleCount])
 
 	return (
 		<div className={`w-full ${h} absolute overflow-hidden`}>

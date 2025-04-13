@@ -1,9 +1,9 @@
 export const galleryImages = [
-	{ lcl: "./../assets/products/g1.jpg" },
+	{ lcl: "./../assets/products/g5.jpg" },
 	{ lcl: "./../assets/products/g2.jpg" },
 	{ lcl: "./../assets/products/g4.jpg" },
 	{ lcl: "./../assets/products/g3.jpg" },
-	{ lcl: "./../assets/products/g5.jpg" },
+	{ lcl: "./../assets/products/g1.jpg" },
 	{ lcl: "./../assets/products/g6.jpg" },
 	{ lcl: "./../assets/products/g7.jpg" },
 	{ lcl: "./../assets/products/g8.jpg" },
