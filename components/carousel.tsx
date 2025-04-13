@@ -1,7 +1,8 @@
 "use client"
-import { galleryImages } from "@/data/images"
 import { useState, useRef, useId, useEffect } from "react"
 import { BsArrowRight } from "react-icons/bs"
+
+import { galleryImages } from "@/data/images"
 import GalleryPreview from "./GalleryPreview"
 
 interface SlideProps {
@@ -80,7 +81,9 @@ const Slide = ({ src, index, current, setPreviewVisible }: SlideProps) => {
 				}}
 			>
 				<div
-					className="absolute top-0 left-0 w-full h-full bg-[#1D1F2F] rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
+					className={`absolute top-0 left-0 w-full h-full bg-[#1b3a57] rounded-[3%] overflow-hidden transition-all duration-150 ease-out ${
+						current !== index ? "blur-sm" : "blur-none"
+					}`}
 					style={{
 						transform: current === index ? "translate3d(calc(var(--x) / 30), calc(var(--y) / 30), 0)" : "none",
 					}}
@@ -88,7 +91,7 @@ const Slide = ({ src, index, current, setPreviewVisible }: SlideProps) => {
 					<img
 						className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-0 transition-opacity duration-600 ease-in-out"
 						style={{
-							opacity: current === index ? 1 : 0.3,
+							opacity: current === index ? 1 : 0.2,
 						}}
 						alt={"Slide image"}
 						src={src}
@@ -148,8 +151,9 @@ export function Carousel() {
 					images={galleryImages}
 				/>
 			)}
+
 			<div
-				className="relative w-[70vmin] h-[70vmin] mx-auto "
+				className="relative w-[70vmin] h-[70vmin]"
 				aria-labelledby={`carousel-heading-${id}`}
 			>
 				<ul
@@ -169,7 +173,7 @@ export function Carousel() {
 					))}
 				</ul>
 
-				<div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+				<div className="absolute flex justify-center w-full top-[calc(100%+1rem)] mt-2">
 					<CarouselControl
 						type="previous"
 						title="Go to previous slide"

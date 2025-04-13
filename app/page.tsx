@@ -3,7 +3,7 @@ import Link from "next/link"
 import { SiInstagram, SiFacebook } from "react-icons/si"
 import { FaXTwitter, FaPhone, FaWhatsapp } from "react-icons/fa6"
 
-import { galleryImages, productImages_1, productImages_2 } from "@/data/images"
+import { productImages_1, productImages_2 } from "@/data/images"
 
 import BubbleAnimation from "@/components/animations/BubbleAnimation"
 import FloatActionsButton from "@/components/FloatActionsButton"
@@ -129,15 +129,16 @@ export default function Home() {
 
 			{/* GALLERY */}
 
-			<section className="flex flex-col min-h-screen w-full overflow-hidden justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
+			<section className=" flex-col min-h-[120vh] w-full overflow-hidden justify-center items-center py-20 bg-gradient-to-b from-[#053057] to-[#2b5b88]">
 				{/* BUBBLES */}
 				<BubbleAnimation intensity={25} />
 
-				<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-14">GALERİ</h1>
-
-				<Carousel />
-
-				{/* <SliderGallery /> */}
+				<div className="w-full items-center justify-center flex h-screen flex-col">
+					<div className="flex w-[70%] overflow-hidden items-center h-full justify-center flex-col">
+						<h1 className="text-7xl max-sm:text-5xl text-center font-black tracking-widest mb-10">GALERİ</h1>
+						<Carousel />
+					</div>
+				</div>
 			</section>
 
 			{/* PRODUCTS 1 */}
