@@ -127,7 +127,7 @@ const CarouselControl = ({ type, title, handleClick }: CarouselControlProps) => 
 
 export function Carousel() {
 	const slides = galleryImages.map((img) => img.lcl)
-	const [current, setCurrent] = useState(Math.floor(slides.length / 2))
+	const [current, setCurrent] = useState(0)
 	const [previewVisible, setPreviewVisible] = useState(false)
 
 	const handlePreviousClick = () => {
