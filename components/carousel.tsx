@@ -127,7 +127,8 @@ const CarouselControl = ({ type, title, handleClick }: CarouselControlProps) => 
 
 export function Carousel() {
 	const slides = galleryImages.map((img) => img.lcl)
-	const [current, setCurrent] = useState(Math.floor(slides.length / 2))
+	const g9Index = slides.findIndex(slide => slide.includes('g9.jpg'))
+	const [current, setCurrent] = useState(g9Index !== -1 ? g9Index : Math.floor(slides.length / 2))
 	const [previewVisible, setPreviewVisible] = useState(false)
 
 	const handlePreviousClick = () => {
