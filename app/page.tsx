@@ -58,7 +58,7 @@ export default function Home() {
 					<div className="flex w-full flex-col items-start pt-40 pl-56 max-2xl:pl-32 max-xl:pt-0 max-xl:pl-0 max-xl:items-center max-xl:justify-center">
 						{/* TITLE */}
 						<h1 className="max-xl:text-center text-7xl max-xl:text-5xl max-sm:text-4xl max-mobile:text-3xl shadow-2xl font-black tracking-widest animate-in slide-in-from-top duration-500">
-							KAVAK LAKERDA
+							KAVAKLAKERDA
 						</h1>
 						<h3 className="max-xl:text-center max-lg:px-32 max-md:px-24 max-sm:px-2 text-3xl max-2xl:text-xl max-xl:text-base max-sm:text-small mt-5 animate-in slide-in-from-bottom duration-500 font-extralight">
 							Balık ve deniz ürünleri konusunda uzmanlaşmış
