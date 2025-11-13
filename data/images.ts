@@ -7,7 +7,7 @@ export const galleryImages = [
 	{ lcl: "/assets/gallery/g1.jpg" },
 	{ lcl: "/assets/gallery/g6.jpg" },
 	{ lcl: "/assets/gallery/g7.jpg" },
-	{ lcl: "/assets/products/g8.jpg" },
+	{ lcl: "/assets/gallery/g8.jpg" },
 ]
 
 export const productImages_1 = [
